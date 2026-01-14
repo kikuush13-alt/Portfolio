@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Creative Director</title>
+    
+    <!-- Fonts -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Inter:wght@300;400;500;600&display=swap');
+    </style>
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- GSAP -->
+    <script src="lib/gsap-minimal.js"></script>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="container">
+            <h1 class="hero-title">
+                <span class="design-text"><em><strong>Design</strong></em> less</span>
+                <span class="think-text">think <em><strong>more</strong></em>.</span>
+            </h1>
+        </div>
+    </section>
+
+    <!-- Wave Transition -->
+    <div class="wave-transition wave-1"></div>
+
+    <!-- MBTI Section -->
+    <section id="mbti" class="mbti-section">
+        <div class="container">
+            <h2>Personality Insights</h2>
+            <div class="mbti-content">
+                <div class="circular-charts">
+                    <div class="chart-item">
+                        <div class="circular-chart">
+                            <svg viewBox="0 0 200 200">
+                                <circle class="chart-bg" cx="100" cy="100" r="80"/>
+                                <circle class="chart-progress" cx="100" cy="100" r="80" data-percent="75"/>
+                            </svg>
+                            <div class="chart-percentage">75%</div>
+                        </div>
+                        <p class="chart-label">Extraverted</p>
+                    </div>
+                    <div class="chart-item">
+                        <div class="circular-chart">
+                            <svg viewBox="0 0 200 200">
+                                <circle class="chart-bg" cx="100" cy="100" r="80"/>
+                                <circle class="chart-progress" cx="100" cy="100" r="80" data-percent="60"/>
+                            </svg>
+                            <div class="chart-percentage">60%</div>
+                        </div>
+                        <p class="chart-label">Intuitive</p>
+                    </div>
+                    <div class="chart-item">
+                        <div class="circular-chart">
+                            <svg viewBox="0 0 200 200">
+                                <circle class="chart-bg" cx="100" cy="100" r="80"/>
+                                <circle class="chart-progress" cx="100" cy="100" r="80" data-percent="85"/>
+                            </svg>
+                            <div class="chart-percentage">85%</div>
+                        </div>
+                        <p class="chart-label">Thinking</p>
+                    </div>
+                    <div class="chart-item">
+                        <div class="circular-chart">
+                            <svg viewBox="0 0 200 200">
+                                <circle class="chart-bg" cx="100" cy="100" r="80"/>
+                                <circle class="chart-progress" cx="100" cy="100" r="80" data-percent="70"/>
+                            </svg>
+                            <div class="chart-percentage">70%</div>
+                        </div>
+                        <p class="chart-label">Judging</p>
+                    </div>
+                </div>
+                <div class="progress-bars">
+                    <div class="progress-item">
+                        <div class="progress-bar" data-percent="80">
+                            <div class="progress-fill">
+                                <span class="progress-text">Leadership 80%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="progress-item">
+                        <div class="progress-bar" data-percent="90">
+                            <div class="progress-fill">
+                                <span class="progress-text">Creativity 90%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="progress-item">
+                        <div class="progress-bar" data-percent="75">
+                            <div class="progress-fill">
+                                <span class="progress-text">Strategy 75%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="progress-item">
+                        <div class="progress-bar" data-percent="95">
+                            <div class="progress-fill">
+                                <span class="progress-text">Vision 95%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wave Transition -->
+    <div class="wave-transition wave-2"></div>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section">
+        <div class="container">
+            <h2>Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-item" data-category="design">
+                    <div class="skill-bar" data-percent="95">
+                        <div class="skill-fill">
+                            <span class="skill-name">UI/UX Design</span>
+                            <span class="skill-percent">95%</span>
+                        </div>
+                    </div>
+                    <div class="skill-details">
+                        <p>Expert in creating intuitive and beautiful user interfaces with focus on user experience and modern design principles.</p>
+                    </div>
+                </div>
+                <div class="skill-item" data-category="frontend">
+                    <div class="skill-bar" data-percent="90">
+                        <div class="skill-fill">
+                            <span class="skill-name">Frontend Development</span>
+                            <span class="skill-percent">90%</span>
+                        </div>
+                    </div>
+                    <div class="skill-details">
+                        <p>Proficient in HTML, CSS, JavaScript, and modern frameworks. Creating responsive and performant web applications.</p>
+                    </div>
+                </div>
+                <div class="skill-item" data-category="design">
+                    <div class="skill-bar" data-percent="88">
+                        <div class="skill-fill">
+                            <span class="skill-name">Brand Identity</span>
+                            <span class="skill-percent">88%</span>
+                        </div>
+                    </div>
+                    <div class="skill-details">
+                        <p>Crafting cohesive brand identities that tell compelling stories and resonate with target audiences.</p>
+                    </div>
+                </div>
+                <div class="skill-item" data-category="animation">
+                    <div class="skill-bar" data-percent="85">
+                        <div class="skill-fill">
+                            <span class="skill-name">Motion Design</span>
+                            <span class="skill-percent">85%</span>
+                        </div>
+                    </div>
+                    <div class="skill-details">
+                        <p>Creating smooth animations and micro-interactions that enhance user experience and bring interfaces to life.</p>
+                    </div>
+                </div>
+                <div class="skill-item" data-category="strategy">
+                    <div class="skill-bar" data-percent="92">
+                        <div class="skill-fill">
+                            <span class="skill-name">Creative Strategy</span>
+                            <span class="skill-percent">92%</span>
+                        </div>
+                    </div>
+                    <div class="skill-details">
+                        <p>Developing comprehensive creative strategies that align business goals with user needs and market trends.</p>
+                    </div>
+                </div>
+                <div class="skill-item" data-category="frontend">
+                    <div class="skill-bar" data-percent="87">
+                        <div class="skill-fill">
+                            <span class="skill-name">Responsive Design</span>
+                            <span class="skill-percent">87%</span>
+                        </div>
+                    </div>
+                    <div class="skill-details">
+                        <p>Building adaptive layouts that work seamlessly across all devices and screen sizes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wave Transition -->
+    <div class="wave-transition wave-3"></div>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
+        <div class="container">
+            <h2>Selected Work</h2>
+            <div class="filter-nav">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="design">Design</button>
+                <button class="filter-btn" data-filter="frontend">Frontend</button>
+                <button class="filter-btn" data-filter="animation">Animation</button>
+                <button class="filter-btn" data-filter="strategy">Strategy</button>
+            </div>
+            <div class="projects-grid">
+                <div class="project-item" data-category="design">
+                    <div class="project-image">
+                        <img src="images/project1.svg" alt="Project 1">
+                    </div>
+                    <div class="project-info">
+                        <h3>Luxury Brand Redesign</h3>
+                        <p>Complete brand overhaul for premium fashion house</p>
+                    </div>
+                </div>
+                <div class="project-item" data-category="frontend">
+                    <div class="project-image">
+                        <img src="images/project2.svg" alt="Project 2">
+                    </div>
+                    <div class="project-info">
+                        <h3>E-commerce Platform</h3>
+                        <p>Modern shopping experience with seamless UX</p>
+                    </div>
+                </div>
+                <div class="project-item" data-category="design">
+                    <div class="project-image">
+                        <img src="images/project3.svg" alt="Project 3">
+                    </div>
+                    <div class="project-info">
+                        <h3>Minimalist Portfolio</h3>
+                        <p>Clean and elegant showcase for photographer</p>
+                    </div>
+                </div>
+                <div class="project-item" data-category="animation">
+                    <div class="project-image">
+                        <img src="images/project4.svg" alt="Project 4">
+                    </div>
+                    <div class="project-info">
+                        <h3>Interactive Dashboard</h3>
+                        <p>Data visualization with smooth animations</p>
+                    </div>
+                </div>
+                <div class="project-item" data-category="strategy">
+                    <div class="project-image">
+                        <img src="images/project5.svg" alt="Project 5">
+                    </div>
+                    <div class="project-info">
+                        <h3>Digital Strategy</h3>
+                        <p>Complete digital transformation roadmap</p>
+                    </div>
+                </div>
+                <div class="project-item" data-category="frontend">
+                    <div class="project-image">
+                        <img src="images/project6.svg" alt="Project 6">
+                    </div>
+                    <div class="project-info">
+                        <h3>SaaS Application</h3>
+                        <p>Enterprise software with elegant interface</p>
+                    </div>
+                </div>
+                <div class="project-item" data-category="design">
+                    <div class="project-image">
+                        <img src="images/project7.svg" alt="Project 7">
+                    </div>
+                    <div class="project-info">
+                        <h3>Mobile App Design</h3>
+                        <p>Intuitive interface for lifestyle app</p>
+                    </div>
+                </div>
+                <div class="project-item" data-category="animation">
+                    <div class="project-image">
+                        <img src="images/project8.svg" alt="Project 8">
+                    </div>
+                    <div class="project-info">
+                        <h3>Landing Page</h3>
+                        <p>High-converting page with engaging animations</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wave Transition -->
+    <div class="wave-transition wave-4"></div>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <div class="about-left">
+                    <div class="profile-image">
+                        <img src="images/profile.svg" alt="Profile">
+                    </div>
+                    <div class="profile-info">
+                        <div class="info-item">
+                            <span class="info-label">Name</span>
+                            <span class="info-value">Alex Morgan</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Role</span>
+                            <span class="info-value">Creative Director</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Experience</span>
+                            <span class="info-value">15+ Years</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Location</span>
+                            <span class="info-value">New York, USA</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Email</span>
+                            <span class="info-value">hello@alexmorgan.com</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-right">
+                    <p class="about-text">
+                        <span class="initial-letter">A</span>s a creative director with over 15 years of experience, I specialize in crafting exceptional digital experiences that blend aesthetic excellence with strategic thinking. My approach combines deep understanding of user psychology with cutting-edge design principles to create solutions that not only look beautiful but drive meaningful results.
+                    </p>
+                    <p class="about-text">
+                        Throughout my career, I've had the privilege of working with leading brands across various industries, from luxury fashion to technology startups. Each project presents a unique challenge, and I thrive on transforming complex problems into elegant, user-centered solutions.
+                    </p>
+                    <p class="about-text">
+                        My philosophy centers on the belief that great design is invisible—it should feel natural, intuitive, and effortless. I'm passionate about mentoring emerging designers and staying at the forefront of design innovation, constantly exploring new technologies and methodologies to push creative boundaries.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wave Transition -->
+    <div class="wave-transition wave-5"></div>
+
+    <!-- Timeline Section -->
+    <section id="timeline" class="timeline-section">
+        <div class="container">
+            <h2>Journey</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-year">2023</span>
+                        <h3>Creative Director</h3>
+                        <p>Leading creative strategy and design innovation at premier digital agency</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-year">2019</span>
+                        <h3>Senior Designer</h3>
+                        <p>Spearheaded major brand redesigns and digital transformations</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-year">2015</span>
+                        <h3>Design Lead</h3>
+                        <p>Built and managed design team for tech startup, Series B funded</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-year">2011</span>
+                        <h3>UI/UX Designer</h3>
+                        <p>Created user experiences for Fortune 500 clients</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-year">2008</span>
+                        <h3>Started Journey</h3>
+                        <p>Began career in design with focus on web and digital media</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wave Transition -->
+    <div class="wave-transition wave-6"></div>
+
+    <!-- Blog Section -->
+    <section id="blog" class="blog-section">
+        <div class="container">
+            <h2>Insights</h2>
+            <div class="blog-grid">
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="images/blog1.svg" alt="Blog 1">
+                    </div>
+                    <div class="blog-content">
+                        <h3>The Future of Design Systems</h3>
+                        <p>Exploring how design systems evolve and adapt to emerging technologies and user needs.</p>
+                        <span class="blog-date">January 2024</span>
+                    </div>
+                </article>
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="images/blog2.svg" alt="Blog 2">
+                    </div>
+                    <div class="blog-content">
+                        <h3>Minimalism in Digital Design</h3>
+                        <p>Why less is often more when creating memorable user experiences.</p>
+                        <span class="blog-date">December 2023</span>
+                    </div>
+                </article>
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="images/blog3.svg" alt="Blog 3">
+                    </div>
+                    <div class="blog-content">
+                        <h3>Accessibility First Approach</h3>
+                        <p>Making digital experiences inclusive without compromising on aesthetics.</p>
+                        <span class="blog-date">November 2023</span>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Portfolio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+</body>
+</html>
