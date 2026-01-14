@@ -158,25 +158,27 @@ function setupSkillsInteraction() {
         });
         
         // Desktop hover preview
-        if (window.innerWidth > 768) {
-            skillBar.addEventListener('mouseenter', () => {
-                if (!item.classList.contains('active')) {
-                    gsap.to(item, {
-                        duration: 0.3,
-                        scale: 1.02,
-                        ease: 'power2.out'
-                    });
-                }
-            });
-            
-            skillBar.addEventListener('mouseleave', () => {
+        const checkHover = () => window.innerWidth > 768;
+        
+        skillBar.addEventListener('mouseenter', () => {
+            if (!item.classList.contains('active') && checkHover()) {
+                gsap.to(item, {
+                    duration: 0.3,
+                    scale: 1.02,
+                    ease: 'power2.out'
+                });
+            }
+        });
+        
+        skillBar.addEventListener('mouseleave', () => {
+            if (checkHover()) {
                 gsap.to(item, {
                     duration: 0.3,
                     scale: 1,
                     ease: 'power2.out'
                 });
-            });
-        }
+            }
+        });
     });
 }
 
@@ -377,7 +379,8 @@ function setupSmoothScroll() {
 // RESPONSIVE HANDLING
 // ===================================
 function handleResize() {
-    // Refresh on resize
+    // Debounced resize handling for performance
+    // Could be extended to refresh scroll animations if needed
 }
 
 // ===================================
@@ -396,8 +399,12 @@ function init() {
     setupBlogAnimations();
     setupSmoothScroll();
     
-    // Handle window resize
-    window.addEventListener('resize', handleResize);
+    // Handle window resize with debouncing
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(handleResize, 250);
+    });
 }
 
 // Start when DOM is ready
