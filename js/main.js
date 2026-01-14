@@ -125,6 +125,12 @@ function animateSkillBars() {
 // ===================================
 function setupSkillsInteraction() {
     const skillItems = document.querySelectorAll('.skill-item');
+    let isDesktop = window.innerWidth > 768;
+    
+    // Update desktop flag on resize
+    window.addEventListener('resize', () => {
+        isDesktop = window.innerWidth > 768;
+    });
     
     skillItems.forEach(item => {
         const skillBar = item.querySelector('.skill-bar');
@@ -158,10 +164,8 @@ function setupSkillsInteraction() {
         });
         
         // Desktop hover preview
-        const checkHover = () => window.innerWidth > 768;
-        
         skillBar.addEventListener('mouseenter', () => {
-            if (!item.classList.contains('active') && checkHover()) {
+            if (!item.classList.contains('active') && isDesktop) {
                 gsap.to(item, {
                     duration: 0.3,
                     scale: 1.02,
@@ -171,7 +175,7 @@ function setupSkillsInteraction() {
         });
         
         skillBar.addEventListener('mouseleave', () => {
-            if (checkHover()) {
+            if (isDesktop) {
                 gsap.to(item, {
                     duration: 0.3,
                     scale: 1,
@@ -379,8 +383,8 @@ function setupSmoothScroll() {
 // RESPONSIVE HANDLING
 // ===================================
 function handleResize() {
-    // Debounced resize handling for performance
-    // Could be extended to refresh scroll animations if needed
+    // Reserved for future enhancements like refreshing scroll animations
+    // Currently handled inline in setupSkillsInteraction
 }
 
 // ===================================
@@ -398,13 +402,6 @@ function init() {
     setupTimelineAnimations();
     setupBlogAnimations();
     setupSmoothScroll();
-    
-    // Handle window resize with debouncing
-    let resizeTimeout;
-    window.addEventListener('resize', () => {
-        clearTimeout(resizeTimeout);
-        resizeTimeout = setTimeout(handleResize, 250);
-    });
 }
 
 // Start when DOM is ready
