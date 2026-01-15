@@ -113,7 +113,7 @@ h2 {
     width: 100%;
     height: 150px;
     position: relative;
-    overflow: hidden;
+    overflow: visible;
 }
 
 @media (max-width: 768px) {
@@ -122,94 +122,36 @@ h2 {
     }
 }
 
-.wave-1 {
-    background: var(--color-dark);
-}
-
-.wave-1::after {
-    content: '';
+.wave-transition svg {
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: var(--color-light);
-    clip-path: polygon(0 40%, 25% 60%, 50% 40%, 75% 60%, 100% 40%, 100% 100%, 0% 100%);
+}
+
+.wave-1 {
+    background: var(--color-dark);
 }
 
 .wave-2 {
     background: var(--color-light);
 }
 
-.wave-2::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #ffffff;
-    clip-path: polygon(0 50%, 20% 35%, 40% 50%, 60% 30%, 80% 50%, 100% 35%, 100% 100%, 0% 100%);
-}
-
 .wave-3 {
     background: #ffffff;
-}
-
-.wave-3::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: var(--color-light);
-    clip-path: polygon(0 30%, 30% 50%, 50% 25%, 70% 45%, 100% 30%, 100% 100%, 0% 100%);
 }
 
 .wave-4 {
     background: var(--color-light);
 }
 
-.wave-4::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #f0f0f0;
-    clip-path: polygon(0 45%, 20% 30%, 40% 45%, 60% 25%, 80% 45%, 100% 30%, 100% 100%, 0% 100%);
-}
-
 .wave-5 {
     background: #f0f0f0;
 }
 
-.wave-5::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: var(--color-light);
-    clip-path: polygon(0 35%, 25% 50%, 50% 30%, 75% 50%, 100% 35%, 100% 100%, 0% 100%);
-}
-
 .wave-6 {
     background: var(--color-light);
-}
-
-.wave-6::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: var(--color-dark);
-    clip-path: polygon(0 40%, 30% 25%, 50% 40%, 70% 20%, 100% 40%, 100% 100%, 0% 100%);
 }
 
 /* ===================================
