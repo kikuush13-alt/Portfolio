@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Blog articles by Khadija Okbi">
+  <title>Blog – Khadija Okbi</title>
+  <link rel="icon" type="image/png" href="img/logo_white.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Mulish:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style/style.css">
+  <style>
+    /* Blog Page Styles - Vogue Inspired */
+    body {
+      background: #FAFAFA;
+    }
+    
+    .blog-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: clamp(2rem, 6vw, 4rem) clamp(1.5rem, 4vw, 2rem);
+    }
+    
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+      color: #314A51;
+      font-size: 0.875rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 3rem;
+      transition: all 0.3s ease;
+    }
+    
+    .back-link:hover {
+      color: #6E3B49;
+      transform: translateX(-4px);
+    }
+    
+    .back-icon {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+    }
+    
+    .blog-hero {
+      text-align: center;
+      padding: clamp(3rem, 8vw, 6rem) 0;
+      border-bottom: 1px solid #E5E5E5;
+    }
+    
+    .blog-category {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #6E3B49;
+      margin-bottom: 1.5rem;
+    }
+    
+    .blog-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 400;
+      font-style: italic;
+      line-height: 1.1;
+      color: #0A0A0A;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.02em;
+    }
+    
+    .blog-subtitle {
+      font-size: clamp(1rem, 1.5vw, 1.25rem);
+      line-height: 1.6;
+      color: #525252;
+      font-weight: 300;
+      max-width: 600px;
+      margin: 0 auto 2rem;
+    }
+    
+    .blog-meta {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      font-size: 0.875rem;
+      color: #7A7A7A;
+    }
+    
+    .blog-meta-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .blog-images {
+      margin: clamp(3rem, 6vw, 5rem) 0;
+      display: grid;
+      gap: 1.5rem;
+    }
+    
+    .blog-image-primary {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 16/10;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+    
+    .blog-image-secondary {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      border-radius: 4px;
+      opacity: 0.95;
+    }
+    
+    .blog-content {
+      padding: clamp(2rem, 4vw, 3rem) 0;
+    }
+    
+    .blog-content h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.75rem, 3vw, 2.25rem);
+      font-weight: 400;
+      font-style: italic;
+      color: #314A51;
+      margin: 2.5rem 0 1.5rem;
+      letter-spacing: -0.01em;
+    }
+    
+    .blog-content p {
+      font-size: 1.0625rem;
+      line-height: 1.75;
+      color: #2D2D2D;
+      margin-bottom: 1.5rem;
+      font-weight: 400;
+    }
+    
+    .blog-content p:first-of-type::first-letter {
+      font-size: 4rem;
+      line-height: 1;
+      float: left;
+      font-family: var(--font-display);
+      font-weight: 400;
+      margin: 0.1rem 0.75rem 0 0;
+      color: #6E3B49;
+    }
+    
+    .blog-content a {
+      color: #6E3B49;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      transition: all 0.2s ease;
+    }
+    
+    .blog-content a:hover {
+      color: #314A51;
+    }
+    
+    .blog-quote {
+      border-left: 3px solid #6E3B49;
+      padding-left: 2rem;
+      margin: 3rem 0;
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-style: italic;
+      line-height: 1.6;
+      color: #314A51;
+    }
+    
+    .blog-divider {
+      width: 60px;
+      height: 1px;
+      background: #6E3B49;
+      margin: 3rem auto;
+    }
+    
+    .blog-footer {
+      margin-top: clamp(3rem, 6vw, 5rem);
+      padding-top: 3rem;
+      border-top: 1px solid #E5E5E5;
+      text-align: center;
+    }
+    
+    .blog-footer-text {
+      font-size: 0.875rem;
+      color: #7A7A7A;
+      margin-bottom: 2rem;
+    }
+    
+    .blog-share {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+    
+    .share-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1px solid #E5E5E5;
+      background: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #525252;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    
+    .share-btn:hover {
+      border-color: #6E3B49;
+      color: #6E3B49;
+      transform: translateY(-2px);
+    }
+    
+    @media (max-width: 768px) {
+      .blog-content p:first-of-type::first-letter {
+        font-size: 3rem;
+        margin-right: 0.5rem;
+      }
+      
+      .blog-quote {
+        font-size: 1.25rem;
+        padding-left: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header / Navbar -->
+  <header class="site-header" id="top" aria-label="Seitennavigation">
+    <div class="container nav-bar">
+      <a href="index.html" class="logo">
+        <img src="img/logo_white.png" alt="Khadija Okbi Logo" width="45">
+        <img src="img/logo_black.png" alt="Khadija Okbi Logo" width="45" class="logo-onscroll">
+      </a>
+      <nav class="nav" aria-label="Hauptnavigation">
+        <a href="index.html#hero" class="nav-link">Home</a>
+        <a href="index.html#projects" class="nav-link">What I do</a>
+        <a href="about.html" class="nav-link">About me</a>
+        <a href="index.html#blog" class="nav-link">Blog</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="blog-container">
+    <a href="index.html#blog" class="back-link">
+      <svg class="back-icon" viewBox="0 0 24 24">
+        <path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" />
+      </svg>
+      <span>Zurück zum Blog</span>
+    </a>
+
+    <header class="blog-hero"> 
+      <div class="blog-category">Philosophie & Technologie</div>
+      <h1 class="blog-title">
+        Die Illusion der freien Meinung
+      </h1>
+      <p class="blog-subtitle">
+        Demokratie in Zeiten von Social Media & KI – Eine Analyse über die Grenzen menschlicher Autonomie
+      </p>
+      <div class="blog-meta">
+        <div class="blog-meta-item">
+          <span>Geschätzte Lesezeit: 6 Minuten</span>
+        </div>
+        <div class="blog-meta-item">
+          <span>Oktober 2025</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="blog-images">
+      <img class="blog-image-primary" src="img/idpa2.jpg" alt="Die Illusion der freien Meinung" loading="lazy" />
+      <img class="blog-image-secondary" src="img/idpa.jpg" alt="Zusätzliche Visualisierung" loading="lazy" />
+    </div>
+
+    <article class="blog-content">
+      <p>Meine IDPA (Individuelle Projektarbeit) mit dem Titel "Die Illusion der freien Meinung" entstand aus einer intensiven Beschäftigung mit der menschlichen Psyche, die vor einiger Zeit begann. Damals war das Ziel klar: Ich wollte die psychologischen, biologischen und sozialen Mechanismen verstehen, die unser Denken prägen. Doch je tiefer ich einstieg, desto mehr offenbarte sich eine unbequeme Wahrheit: Wir als Menschen sind in viel größerem Maße Produkte unserer biologischen und sozialen Programmierung, als wir glauben möchten.</p>
+
+      <p>Diese Erkenntnis führte zu einer neuen Frage, die zum Kern dieser Arbeit wurde: Wenn unsere Überzeugungen nicht frei sind, sondern das Ergebnis von Genetik, Erfahrung und Umfeld, inwiefern können wir dann wirklich von einer eigenen Meinung sprechen?</p>
+
+      <h2>Die biologische Programmierung</h2>
+
+      <p>Schon seit einiger Zeit befasse ich mich intensiv mit der menschlichen Psyche. Was mit dem Ziel begann, mir Wissen anzueignen, um zu verstehen, endete in der Akzeptanz, dass wir als Menschen eigentlich alle machtlos unserer selbst sind. Wir machen uns vor, eine freie Meinung zu besitzen, während sie lediglich ein Ergebnis von Prägung, Erfahrung und Umfeld ist.</p>
+
+      <div class="blog-quote">
+        "Lange bevor wir ein bewusstes Wort sprechen, ist die Weiche bereits gestellt – unsere Meinungen werden nicht im Kopf, sondern im Bauch gemacht."
+      </div>
+
+      <p>Gene wie das COMT-Gen bestimmen schon bei unserer Geburt, wie risikofreudig oder neugierig wir sind und damit, ob wir eher zu progressiven oder konservativen politischen Ansichten neigen. Die Epigenetik zeigt uns, dass sogar Traumata unserer Vorfahren wie Hungersnöte, Kriege und Verfolgung über Generationen hinweg unsere Ängstlichkeit und unser Sicherheitsbedürfnis prägen.</p>
+
+      <p>Hinzu kommt ein komplexer Hormon-Cocktail: Neurotransmitter wie Oxytocin steuern nicht nur die Bindung, sondern auch unsere politische Loyalität und das Vertrauen gegenüber Anführern, während Dopamin uns süchtig nach Bestätigung macht, ein Mechanismus, den Social Media perfekt ausnutzt. Unsere bewussten Meinungen sind daher oft nur der bewusste Nachvollzug dessen, was unser biologischer Cocktail bereits entschieden hat.</p>
+
+      <div class="blog-divider"></div>
+
+      <h2>Soziale Konditionierung</h2>
+
+      <p>Doch Biologie allein erzählt nicht die ganze Geschichte. Weltgeschehen und technischer Fortschritt bekamen aus dieser Perspektive eine ganz andere Bedeutung. Wir sind tiefgreifend soziale Wesen, und unser tiefstes Bedürfnis ist die Zugehörigkeit – ein evolutionäres Überlebensmuster, das systematisch von unseren sozialen Strukturen genutzt wird.</p>
+
+      <p>Religionen funktionieren als hocheffiziente "kulturelle Technologien", die Verhaltensregeln durch Belohnung und Bestrafung festlegen und so Kooperation in großem Maßstab ermöglichen. Freud erkannte bereits: "Das Ich ist nicht Herr im eigenen Hause." Unsere bewussten Meinungen sind oft nur Rationalisierungen unbewusster Triebe, und charismatische Führer nutzen diese psychologische Lücke meisterhaft, indem sie unbewusste Sehnsüchte aktivieren und sich so irrationale Loyalität sichern.</p>
+
+      <h2>Die digitale Dimension</h2>
+
+      <p>Wie eigenständig kann ein Mensch unter diesen Bedingungen Entscheidungen treffen? Diese Frage wird noch dringlicher, wenn wir die moderne technologische Dimension hinzufügen: Zusätzlich zur eigenen Programmierung und Konditionierung werden wir nun auch durch Algorithmen und künstliche Intelligenz beeinflusst.</p>
+
+      <p>Das 21. Jahrhundert hat alle Mechanismen der psychischen und sozialen Konditionierung perfektioniert und globalisiert. Social-Media-Algorithmen sind darauf optimiert, uns möglichst lange zu binden und fördern dafür emotional aufgeladene, polarisierende Inhalte – Wut und Empörung verbreiten sich sechsmal schneller als Fakten und schaffen so digitale Echokammern.</p>
+
+      <p>Empfehlungsalgorithmen auf Plattformen wie YouTube führen Nutzer systematisch zu extremeren Inhalten; die schrittweise Radikalisierung geschieht unbewusst, während wir tiefer in unsere Filterblase rutschen. Große Sprachmodelle sind darauf optimiert, Nutzer zufriedenzustellen – nicht zu hinterfragen – und werden so zu digitalen Echokammern, die unsere bestehenden Überzeugungen nur verstärken.</p>
+
+      <div class="blog-quote">
+        "Wenn Meinungen manipuliert werden, können Wahlen nicht mehr als Ausdruck des freien Bürgerwillens gelten."
+      </div>
+
+      <h2>Der Weg zur Selbsterkenntnis</h2>
+
+      <p>Wenn unsere Meinungen biologisch vorcodiert, neurochemisch gesteuert und technologisch konditioniert sind, bleibt die Frage: Was ist dann noch echt? Philosophen wie Nietzsche erkannten: Der freie Wille ist eine Illusion, aber eine notwendige. Die einzige verbleibende Freiheit liegt in der Selbsterkenntnis.</p>
+
+      <p>Um diesen Fragen auf den Grund zu gehen, beschäftige ich mich in meiner wissenschaftlichen Abschlussarbeit mit den fünf Kernaspekten des menschlichen Geistes: Genetik und Epigenetik, Neurowissenschaft, Soziologie, Psychologie und Philosophie. Erst wenn wir diese Grundlagen verstehen, lässt sich erkennen, wie leicht wir manipulierbar sind und wie groß die Gefahr einer subtilen, massenwirksamen Indoktrinierung tatsächlich ist.</p>
+
+      <p>Wahre geistige Autonomie erfordert kritische Distanz – das Erkennen der eigenen biologischen und psychischen Prägungen – sowie algorithmische Aufklärung und eine bewusste Diversifizierung unserer Informationsquellen. Nur durch das aktive Ausbrechen aus der Echokammer und die Suche nach abweichenden Perspektiven kann die Erkenntnis der eigenen Unfreiheit zum ersten Schritt zur Befreiung werden.</p>
+
+      <p>In der digitalen Welt ist dies die wichtigste Fähigkeit für jeden denkenden Bürger.</p>
+    </article>
+
+    <footer class="blog-footer">
+      <p class="blog-footer-text">Artikel teilen</p>
+      <div class="blog-share">
+        <a href="#" class="share-btn" aria-label="Auf Twitter teilen">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/>
+          </svg>
+        </a>
+        <a href="#" class="share-btn" aria-label="Auf LinkedIn teilen">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/>
+            <circle cx="4" cy="4" r="2" stroke="none" fill="currentColor"/>
+          </svg>
+        </a>
+        <a href="#" class="share-btn" aria-label="Link kopieren">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+          </svg>
+        </a>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" aria-label="Seitenende" style="background: #FAFAFA;">
+    <div class="container footer-inner">
+      <div class="footer-copy">© 2025 Design & Development by Khadija Okbi</div>
+      <div class="footer-socials" aria-label="Soziale Netzwerke">
+        <a class="social-link" href="https://github.com/khadijaokbi1" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.53-1.36-1.3-1.72-1.3-1.72-1.06-.72.08-.71.08-.71 1.17.08 1.79 1.2 1.79 1.2 1.04 1.78 2.73 1.27 3.4.97.11-.76.41-1.27.75-1.56-2.56-.29-5.26-1.28-5.26-5.71 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.04 0 0 .97-.31 3.18 1.18a11.03 11.03 0 0 1 2.9-.39c.98 0 1.97.13 2.9.39 2.2-1.49 3.17-1.18 3.17-1.18.64 1.58.24 2.75.12 3.04.74.81 1.19 1.84 1.19 3.1 0 4.44-2.71 5.42-5.29 5.7.42.36.8 1.07.8 2.16 0 1.56-.01 2.82-.01 3.2 0 .31.21.68.8.56C20.71 21.39 24 17.08 24 12c0-6.27-5.23-11.5-12-11.5z" fill="currentColor"/>
+          </svg>
+        </a>
+        <a class="social-link" href="https://ch.linkedin.com/in/khadija-okbi-652a211a4" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="2" y="2" width="20" height="20" rx="2" stroke="currentColor" stroke-width="1.2" fill="none"/>
+            <path d="M6.5 9.5v8.5M6.5 7.5v.01M10.5 17.5v-6c0-1.1.9-2 2-2s2 .9 2 2v6M10.5 11.5h4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <a class="social-link" href="https://www.tiktok.com/@mentalwealthy" target="_blank" rel="noopener" aria-label="TikTok">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M16 7.5c.5 0 .9.04 1.3.12v3.38a4.2 4.2 0 0 1-2.3-.64v5.64A4.86 4.86 0 0 1 11 20a4.86 4.86 0 0 1-4.86-4.86 4.86 4.86 0 0 1 4.86-4.86c.28 0 .55.03.81.08V7.5h.19c1.14 0 2.09.37 2.99 1.03V7.5z" fill="currentColor"/>
+          </svg>
+        </a>
+        <a class="social-link" href="https://codepen.io/khadijaokbi1" target="_blank" rel="noopener" aria-label="CodePen">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M12 2.5L3.5 7v10L12 21.5l8.5-4.5V7L12 2.5z" stroke="currentColor" stroke-width="1.1" fill="none"/>
+            <path d="M3.5 7.5l8.5 5 8.5-5" stroke="currentColor" stroke-width="1.1" fill="none"/>
+            <path d="M12 21.5v-10" stroke="currentColor" stroke-width="1.1" fill="none"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="script/main.js"></script>
+</body>
+</html>
