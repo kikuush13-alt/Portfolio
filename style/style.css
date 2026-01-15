@@ -302,69 +302,17 @@
   
   .hero-claim {
     font-size: clamp(3rem, 7vw, 8rem);
-    line-height: 1.2;
-    font-style: normal;
-    font-weight: 400;
-    color: #fff;
-    font-family: var(--font-display);
-    text-align: center;
-  }
-  
-  .hero-claim em {
+    line-height: 0.95;
     font-style: italic;
-  }
-  
-  .hero-claim strong {
     font-weight: 700;
+    color: #fff;
+    font-family: var(--font-higuen);
   }
   
   .word {
     display: inline-block;
     opacity: 0;
     transform: translateY(40px);
-  }
-  
-  /* =========================================
-     5.5 WAVE TRANSITIONS
-     ========================================= */
-  
-  .wave-transition {
-    width: 100%;
-    height: 150px;
-    position: relative;
-    overflow: visible;
-    display: block;
-  }
-  
-  @media (max-width: 768px) {
-    .wave-transition {
-      height: 100px;
-    }
-  }
-  
-  .wave-transition svg {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: block;
-  }
-  
-  .wave-1 {
-    background: var(--bg-primary);
-  }
-  
-  .wave-2 {
-    background: var(--bg-secondary);
-  }
-  
-  .wave-3 {
-    background: #ffffff;
-  }
-  
-  .wave-4 {
-    background: var(--bg-secondary);
   }
   
   /* =========================================
@@ -676,7 +624,7 @@
     gap: 3rem;
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 0;
+    border-radius: 12px;
     overflow: hidden;
     box-shadow: var(--shadow-lg);
     backdrop-filter: blur(10px);
@@ -720,7 +668,7 @@
     left: 0;
     width: 40px;
     height: 2px;
-    background: var(--accent-burgundy);
+    background: linear-gradient(90deg, var(--accent-burgundy), transparent);
   }
   
   .about-image-wrapper {
@@ -745,7 +693,7 @@
   .about-image-wrapper img {
     width: 100%;
     height: auto;
-    border-radius: 0;
+    border-radius: 8px;
     transition: transform 0.4s var(--easing-standard);
   }
   
@@ -849,7 +797,7 @@
   .event-card {
     background: rgba(255, 255, 255, 0.08);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 0;
+    border-radius: 8px;
     padding: 1rem;
     transition: all 0.4s var(--easing-standard);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
@@ -864,7 +812,7 @@
     left: -100%;
     width: 100%;
     height: 3px;
-    background: var(--accent-burgundy);
+    background: linear-gradient(90deg, var(--accent-burgundy), var(--accent-warm));
     transition: left 0.6s var(--easing-standard);
     z-index: 0;
   }
@@ -972,19 +920,12 @@
   }
   
   .skills-bar .bar {
-    background: var(--accent-burgundy);
+    background: linear-gradient(90deg, var(--accent-burgundy), var(--accent-warm));
     height: 100%;
     width: 0%;
     transition: width 1s cubic-bezier(0.19, 1, 0.22, 1);
     border-radius: 3px;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    padding-right: 10px;
-    color: #fff;
-    font-size: 0.875rem;
-    font-weight: 600;
+    box-shadow: 0 0 10px rgba(187, 162, 138, 0.3);
   }
   
   /* Skills Soft (Circular) */
@@ -1086,7 +1027,7 @@
     position: relative;
     aspect-ratio: 4/3;
     overflow: hidden;
-    border-radius: 0;
+    border-radius: 8px;
     display: flex;
     align-items: flex-end;
     justify-content: center;
@@ -1222,7 +1163,7 @@
     width: 100%;
     height: 100%;
     overflow: hidden;
-    border-radius: 0;
+    border-radius: 8px;
     transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
     z-index: 10;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
@@ -1279,7 +1220,7 @@
     display: flex;
     flex-direction: column;
     transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
-    border-radius: 0;
+    border-radius: 8px;
     overflow: hidden;
     opacity: 0;
     transform: translateY(40px);
@@ -1315,7 +1256,7 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.3);
+    background: linear-gradient(135deg, rgba(110, 59, 73, 0) 0%, rgba(110, 59, 73, 0.2) 100%);
     transition: background 0.4s var(--easing-standard);
   }
   
@@ -1557,7 +1498,7 @@
     background: transparent;
     border: 1px solid currentColor;
     padding: 0.35rem 0.6rem;
-    border-radius: 0;
+    border-radius: 6px;
     font-size: 0.9rem;
     cursor: pointer;
   }
