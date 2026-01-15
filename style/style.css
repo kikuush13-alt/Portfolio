@@ -1996,3 +1996,72 @@
 }
 
 /* End targeted overrides */
+
+/* =========================================
+   RESPONSIVE ENHANCEMENTS FOR NEW FEATURES
+   ========================================= */
+
+@media (max-width: 768px) {
+  /* Hero CTA Button */
+  .hero-cta-btn {
+    bottom: 8vh;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  /* Hero Circle Element */
+  .hero-circle-element {
+    right: 50%;
+    top: auto;
+    bottom: 20vh;
+    transform: translateX(50%);
+    transform-origin: center;
+  }
+  
+  .circle-outer {
+    width: 150px;
+    height: 150px;
+  }
+  
+  /* Accordion Skills */
+  .table-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .tool-grid {
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  }
+  
+  .trigger-title {
+    font-size: clamp(1.25rem, 5vw, 2rem);
+  }
+}
+
+@media (max-width: 480px) {
+  /* Hero Section */
+  .hero-section {
+    height: 70vh;
+    min-height: 500px;
+  }
+  
+  .hero-claim {
+    font-size: clamp(2.5rem, 10vw, 6rem);
+  }
+  
+  .hero-circle-element {
+    display: none; /* Hide on very small screens */
+  }
+  
+  /* Accordion */
+  .accordion-trigger {
+    padding: clamp(20px, 5vw, 35px) 0;
+  }
+  
+  .trigger-left {
+    gap: clamp(12px, 4vw, 25px);
+  }
+  
+  .skills-table {
+    padding: clamp(15px, 3vw, 30px) 0 0 clamp(20px, 4vw, 50px);
+  }
+}
