@@ -446,7 +446,7 @@
 
   
   /* =========================================
-     7. SKILLS SECTION
+     7. SKILLS SECTION - NEW ACCORDION SYSTEM
      ========================================= */
   
   .section-skills {
@@ -455,147 +455,188 @@
     color: #000;
   }
   
-  .skills-wrapper {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-    gap: 6vw;
-    border-top: 1px solid #e0e0e0;
+  .skills-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border-top: 1px solid #E0E0E0;
   }
   
-  .skill-item {
-    border-bottom: 1px solid #e0e0e0;
+  .accordion-item {
+    border-bottom: 1px solid #E0E0E0;
     opacity: 0;
-    animation: skillItemReveal 0.8s ease-out forwards;
+    animation: accordionReveal 0.6s ease-out forwards;
   }
   
-  .skill-item:nth-child(1) { animation-delay: 0.1s; }
-  .skill-item:nth-child(2) { animation-delay: 0.2s; }
-  .skill-item:nth-child(3) { animation-delay: 0.3s; }
-  .skill-item:nth-child(4) { animation-delay: 0.4s; }
+  .accordion-item:nth-child(1) { animation-delay: 0.1s; }
+  .accordion-item:nth-child(2) { animation-delay: 0.2s; }
+  .accordion-item:nth-child(3) { animation-delay: 0.3s; }
+  .accordion-item:nth-child(4) { animation-delay: 0.4s; }
   
-  @keyframes skillItemReveal {
+  @keyframes accordionReveal {
     from {
       opacity: 0;
-      transform: translateX(-30px);
+      transform: translateY(-10px);
     }
     to {
       opacity: 1;
-      transform: translateX(0);
+      transform: translateY(0);
     }
   }
   
-  .skill-trigger {
+  .accordion-trigger {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: clamp(25px, 3.5vw, 45px) 0;
+    padding: clamp(28px, 3.5vw, 48px) 0;
+    background: transparent;
+    border: none;
     cursor: pointer;
-    transition: all var(--speed-base);
-  }
-  
-  .skill-trigger:hover {
-    padding-left: 1rem;
-  }
-  
-  .skill-left {
-    display: flex;
-    align-items: center;
-    gap: 2.5vw;
-  }
-  
-  .skill-number {
-    font-size: clamp(0.7rem, 1vw, 0.9rem);
-    color: var(--accent-burgundy);
-    letter-spacing: 0.1em;
-    font-weight: 600;
-  }
-  
-  .skill-h3 {
-    font-family: var(--font-higuen);
-    font-size: clamp(1.3rem, 2.8vw, 2.5rem);
-    text-transform: uppercase;
-    margin: 0;
     transition: all var(--speed-base) var(--easing-standard);
   }
   
-  .skill-trigger:hover .skill-h3 {
-    color: var(--accent-warm);
-    letter-spacing: 0.1em;
+  .accordion-trigger:hover {
+    padding-left: 1rem;
   }
   
-  .skill-cta {
-    width: clamp(18px, 1.5vw, 24px);
-    height: clamp(18px, 1.5vw, 24px);
-    position: relative;
-    opacity: 0.4;
-    transition: all var(--speed-base);
+  .trigger-left {
+    display: flex;
+    align-items: center;
+    gap: clamp(20px, 2.5vw, 40px);
   }
   
-  .skill-trigger:hover .skill-cta {
-    opacity: 1;
-    transform: rotate(45deg);
+  .trigger-number {
+    font-size: clamp(0.75rem, 1vw, 0.95rem);
+    color: var(--accent-burgundy);
+    letter-spacing: 0.12em;
+    font-weight: 600;
   }
   
-  .skill-cta::before,
-  .skill-cta::after {
-    content: '';
-    position: absolute;
-    background: #000;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  .trigger-title {
+    font-family: var(--font-higuen);
+    font-size: clamp(1.5rem, 3vw, 2.8rem);
+    text-transform: uppercase;
+    margin: 0;
+    transition: all var(--speed-base) var(--easing-standard);
+    letter-spacing: 0.02em;
   }
   
-  .skill-cta::before {
+  .accordion-trigger:hover .trigger-title {
+    color: var(--accent-burgundy);
+    letter-spacing: 0.08em;
+  }
+  
+  .trigger-icon {
+    width: 28px;
+    height: 28px;
+    transition: transform var(--speed-base) var(--easing-standard);
+  }
+  
+  .trigger-icon svg {
     width: 100%;
-    height: 1.5px;
-  }
-  
-  .skill-cta::after {
-    width: 1.5px;
     height: 100%;
+    stroke: currentColor;
   }
   
-  .skill-content {
-    height: 0;
+  .accordion-item[aria-expanded="true"] .trigger-icon {
+    transform: rotate(180deg);
+  }
+  
+  .accordion-content {
+    max-height: 0;
     overflow: hidden;
     opacity: 0;
-    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    transition: max-height 0.6s cubic-bezier(0.23, 1, 0.32, 1),
+                opacity 0.4s ease-out 0.1s,
+                padding 0.5s cubic-bezier(0.23, 1, 0.32, 1);
   }
   
-  .skill-item.active .skill-content {
-    height: auto;
+  .accordion-item.active .accordion-content {
+    max-height: 2000px;
     opacity: 1;
+    padding-bottom: clamp(30px, 4vw, 50px);
   }
   
-  .content-inner {
-    padding: 0 5% clamp(25px, 3vw, 40px) 4.5vw;
-    color: #314A51;
-    max-width: 90%;
+  /* Skills Table */
+  .skills-table {
+    width: 100%;
+    padding: clamp(20px, 3vw, 40px) 0 0 clamp(40px, 5vw, 80px);
   }
   
-  .content-inner p {
-    font-size: clamp(0.95rem, 1.1vw, 1.1rem);
-    line-height: 1.6;
+  .table-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: clamp(30px, 4vw, 60px);
   }
   
-  .tool-logos {
+  .table-cell h4 {
+    font-size: clamp(0.9rem, 1vw, 1.05rem);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--accent-burgundy);
+    margin: 0 0 1rem 0;
+  }
+  
+  .table-cell ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .table-cell li {
+    font-size: clamp(0.9rem, 1vw, 1rem);
+    line-height: 1.8;
+    color: var(--text-secondary);
+    padding-left: 1.2rem;
+    position: relative;
+  }
+  
+  .table-cell li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--accent-burgundy);
+    font-weight: bold;
+  }
+  
+  /* Tool Grid */
+  .tool-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: clamp(16px, 2vw, 24px);
+    margin-top: 1.5rem;
+  }
+  
+  .tool-item {
     display: flex;
-    gap: 1.5vw;
-    margin-top: 2vw;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: clamp(12px, 1.5vw, 16px);
+    background: var(--bg-accent);
+    border-radius: 8px;
+    transition: all var(--speed-base) var(--easing-standard);
   }
   
-  .tool-logos img {
-    height: clamp(16px, 1.3vw, 22px);
-    filter: grayscale(1);
-    opacity: 0.6;
+  .tool-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  }
+  
+  .tool-item img {
+    width: clamp(24px, 2.5vw, 32px);
+    height: clamp(24px, 2.5vw, 32px);
+    object-fit: contain;
     transition: all var(--speed-base);
   }
   
-  .skill-item.active .tool-logos img {
-    filter: grayscale(0);
-    opacity: 0.9;
+  .tool-item span {
+    font-size: clamp(0.7rem, 0.85vw, 0.85rem);
+    text-align: center;
+    color: var(--text-secondary);
+    font-weight: 500;
   }
   
   /* =========================================

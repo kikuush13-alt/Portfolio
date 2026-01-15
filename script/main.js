@@ -63,20 +63,36 @@ const io = new IntersectionObserver((entries) => {
 reveals.forEach(el => io.observe(el));
 
 // =========================================
-// 5. SKILL ITEMS - EXPAND/COLLAPSE
+// 5. ACCORDION SKILLS - EXPAND/COLLAPSE
 // =========================================
 document.addEventListener('DOMContentLoaded', () => {
-  const skillItems = document.querySelectorAll('.skill-item');
-  if (skillItems.length > 0 && !skillItems[0].dataset._hasSkillTrigger) {
-    skillItems.forEach(item => {
-      const trigger = item.querySelector('.skill-trigger') || item;
-      trigger.addEventListener('click', () => {
-        skillItems.forEach(other => other.classList.remove('active'));
-        item.classList.add('active');
+  const accordionItems = document.querySelectorAll('.accordion-item');
+  const accordionTriggers = document.querySelectorAll('.accordion-trigger');
+  
+  accordionTriggers.forEach(trigger => {
+    trigger.addEventListener('click', () => {
+      const item = trigger.closest('.accordion-item');
+      const isActive = item.classList.contains('active');
+      
+      // Close all other accordions
+      accordionItems.forEach(otherItem => {
+        otherItem.classList.remove('active');
+        const otherTrigger = otherItem.querySelector('.accordion-trigger');
+        if (otherTrigger) {
+          otherTrigger.setAttribute('aria-expanded', 'false');
+        }
       });
-      item.dataset._hasSkillTrigger = '1';
+      
+      // Toggle current accordion
+      if (!isActive) {
+        item.classList.add('active');
+        trigger.setAttribute('aria-expanded', 'true');
+      } else {
+        item.classList.remove('active');
+        trigger.setAttribute('aria-expanded', 'false');
+      }
     });
-  }
+  });
 });
 
 // =========================================
