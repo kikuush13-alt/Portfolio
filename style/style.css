@@ -302,11 +302,20 @@
   
   .hero-claim {
     font-size: clamp(3rem, 7vw, 8rem);
-    line-height: 0.95;
-    font-style: italic;
-    font-weight: 700;
+    line-height: 1.2;
+    font-style: normal;
+    font-weight: 400;
     color: #fff;
-    font-family: var(--font-higuen);
+    font-family: var(--font-display);
+    text-align: center;
+  }
+  
+  .hero-claim em {
+    font-style: italic;
+  }
+  
+  .hero-claim strong {
+    font-weight: 700;
   }
   
   .word {
@@ -667,7 +676,7 @@
     gap: 3rem;
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
+    border-radius: 0;
     overflow: hidden;
     box-shadow: var(--shadow-lg);
     backdrop-filter: blur(10px);
@@ -711,7 +720,7 @@
     left: 0;
     width: 40px;
     height: 2px;
-    background: linear-gradient(90deg, var(--accent-burgundy), transparent);
+    background: var(--accent-burgundy);
   }
   
   .about-image-wrapper {
@@ -736,7 +745,7 @@
   .about-image-wrapper img {
     width: 100%;
     height: auto;
-    border-radius: 8px;
+    border-radius: 0;
     transition: transform 0.4s var(--easing-standard);
   }
   
@@ -840,7 +849,7 @@
   .event-card {
     background: rgba(255, 255, 255, 0.08);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
+    border-radius: 0;
     padding: 1rem;
     transition: all 0.4s var(--easing-standard);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
@@ -855,7 +864,7 @@
     left: -100%;
     width: 100%;
     height: 3px;
-    background: linear-gradient(90deg, var(--accent-burgundy), var(--accent-warm));
+    background: var(--accent-burgundy);
     transition: left 0.6s var(--easing-standard);
     z-index: 0;
   }
@@ -963,12 +972,19 @@
   }
   
   .skills-bar .bar {
-    background: linear-gradient(90deg, var(--accent-burgundy), var(--accent-warm));
+    background: var(--accent-burgundy);
     height: 100%;
     width: 0%;
     transition: width 1s cubic-bezier(0.19, 1, 0.22, 1);
     border-radius: 3px;
-    box-shadow: 0 0 10px rgba(187, 162, 138, 0.3);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 10px;
+    color: #fff;
+    font-size: 0.875rem;
+    font-weight: 600;
   }
   
   /* Skills Soft (Circular) */
@@ -1070,7 +1086,7 @@
     position: relative;
     aspect-ratio: 4/3;
     overflow: hidden;
-    border-radius: 8px;
+    border-radius: 0;
     display: flex;
     align-items: flex-end;
     justify-content: center;
@@ -1206,7 +1222,7 @@
     width: 100%;
     height: 100%;
     overflow: hidden;
-    border-radius: 8px;
+    border-radius: 0;
     transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
     z-index: 10;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
@@ -1263,7 +1279,7 @@
     display: flex;
     flex-direction: column;
     transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
-    border-radius: 8px;
+    border-radius: 0;
     overflow: hidden;
     opacity: 0;
     transform: translateY(40px);
@@ -1299,7 +1315,7 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, rgba(110, 59, 73, 0) 0%, rgba(110, 59, 73, 0.2) 100%);
+    background: rgba(0, 0, 0, 0.3);
     transition: background 0.4s var(--easing-standard);
   }
   
@@ -1541,7 +1557,7 @@
     background: transparent;
     border: 1px solid currentColor;
     padding: 0.35rem 0.6rem;
-    border-radius: 6px;
+    border-radius: 0;
     font-size: 0.9rem;
     cursor: pointer;
   }
