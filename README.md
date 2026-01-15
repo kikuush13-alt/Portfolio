@@ -1,103 +1,92 @@
-# Portfolio - Clean Luxury UI
+# Portfolio - Khadija Okbi
 
-A minimalist, elegant portfolio website designed with a focus on clean aesthetics, visual hierarchy, and smooth interactions.
-
-## Design Philosophy
-
-This portfolio follows a "Design less, think more" philosophy, emphasizing:
-- **No gradients** - Pure, solid colors throughout
-- **Sharp corners** - Clean edges (except for skill bars and timeline markers which retain rounded corners)
-- **Visual hierarchy** - Clear spacing, contrast, and typography
-- **Smooth interactions** - GSAP-powered animations
-- **Luxury minimalism** - Elegant, intentional, premium feel
+Modern editorial portfolio showcasing creative design work, video production, marketing, and web development by Khadija Okbi, Mediamatikerin EFZ.
 
 ## Features
 
-### 1. Hero Section
-- Playfair Display typography with italic/bold highlights
-- Animated entrance with GSAP
-- Centered "Design less think more." tagline
+### Smooth Rounded Wave Transitions
+- **Organic SVG curves** between all major sections
+- **Unique patterns** for each transition
+- **Fully responsive** with optimized mobile heights
+- **Color-matched** to adjacent sections for seamless flow
 
-### 2. Section Transitions
-- Unique SVG wave-shaped transitions between all sections
-- Each wave has a different pattern
-- Subtle visual separation
+### Hero Section
+- Full-screen video background (Petrichor project)
+- Animated tagline: "think more design less"
+- GSAP entrance animations
 
-### 3. MBTI/Personality Insights
-- Circular charts with centered percentages
-- SVG progress bars with sharp edges
-- Percentages integrated inside bars
-- Animated on scroll
+### What I Do Section
+Expandable skill cards with:
+- Visual Art (Adobe Creative Suite)
+- Video Production & Editing
+- Marketing & Social Media
+- Web Development (HTML, CSS, JS, PHP)
 
-### 4. Skills Section
-- Skill bars with percentages always visible inside
-- **Hover** (desktop): Preview scaling effect
-- **Click**: Opens detailed description and filters projects
-- **Mobile**: Tap to open details
-- Rounded corners maintained for elegance
+### Projects Gallery
+- 24 curated projects across multiple disciplines
+- Filter by category (All, Visual Art, Motion, Marketing, Web Dev)
+- Chessboard alternating light/dark project cards
+- Detailed project pages for each work
 
-### 5. Skills-Projects Connection
-- Clicking a skill automatically filters projects by category
-- Hovering over projects highlights the corresponding skill
-- Visual connection creates cohesive user experience
+### About Me Section
+Comprehensive profile including:
+- **MBTI Personality**: INTP-A with interactive trait circles
+- **Education Timeline**: Complete career journey from 2018-2025
+- **Favorites**: Books, colors, podcasts, series
+- **Spotify Wrapped**: Top music tracks
+- **Technical Skills**: Adobe suite, frontend/backend development
+- **Soft Skills**: Strategic, creative, analytical
 
-### 6. Projects/Gallery
-- 4-column grid layout
-- Chessboard alternating light/dark background pattern
-- Category filtering with active states
-- Images fill container completely
-- Square, not rounded cards
+### Blog Section
+Featured articles on:
+- "Die Illusion der freien Meinung" (Democracy in times of Social Media & AI)
+- Social media growth strategies
+- Threads community building
 
-### 7. About Me
-- Two equal-width columns
-- Left: Profile image + CV-style info
-- Right: Text with large initial letter + justified alignment
-- No backgrounds or borders
-- Clean, calm layout
+## Design System
 
-### 8. Timeline
-- Reduced size and visual weight
-- Elegant, minimal design
-- Fully responsive with scaling text
-- Rounded timeline markers preserved
+### Colors
+- **Primary Background**: `#000` (Black)
+- **Secondary Background**: `#ebebeb` (Light Gray)
+- **Accent**: `#F5F5F5` (Off-White)
+- **Dark Accent**: `#314A51` (Dark Teal)
 
-### 9. Blog Section
-- Square cards (not rounded)
-- White, readable titles
-- Dark background for contrast
-- Hover animations
+### Typography
+- **Body**: Work Sans
+- **Display**: Playfair Display (serif)
+- **Headings**: Higuen (custom)
 
-### 10. Animations
-- Smooth scroll behavior
-- GSAP-based animations throughout
-- Section entrance effects
-- Scroll-triggered animations
-- Subtle, premium feel
+### Animations
+- GSAP 3.12.5 with ScrollTrigger
+- ScrollSmoother for buttery scroll
+- SplitType for text animations
+- Custom intersection observers for wave effects
 
 ## Technical Stack
 
-- **HTML5** - Semantic structure
-- **CSS3** - Modern styling with CSS custom properties
-- **Vanilla JavaScript** - No framework dependencies
-- **GSAP (minimal)** - Custom lightweight animation library
-- **SVG** - For icons, waves, and charts
+- **HTML5**: Semantic structure with ARIA labels
+- **CSS3**: Custom properties, flexbox, grid
+- **JavaScript**: Vanilla JS with GSAP
+- **Video**: MP4 hero background
+- **Fonts**: Custom web fonts (Higuen, Bruney, etc.)
 
 ## File Structure
 
 ```
 Portfolio/
-├── index.html          # Main HTML structure
-├── css/
-│   └── style.css       # All styles
-├── js/
-│   └── main.js         # Interactive functionality
-├── lib/
-│   └── gsap-minimal.js # Lightweight animation library
-├── images/
-│   ├── project*.svg    # Project placeholders
-│   ├── blog*.svg       # Blog post images
-│   └── profile.svg     # Profile image
-└── README.md
+├── fonts/              # Custom fonts (7 files)
+│   ├── Higuen.woff2
+│   ├── Bruney.woff
+│   └── ...
+├── img/               # Images and gallery (68 files)
+│   ├── gallery/      # Project thumbnails (24 images)
+│   ├── portrait.jpg
+│   └── logo_*.png
+├── style/            # CSS stylesheets
+│   └── style.css    # Main styles (1400+ lines)
+├── video/           # Hero and project videos
+│   └── petrichor_hero.mp4
+└── index.html       # Main portfolio page (800+ lines)
 ```
 
 ## Browser Support
@@ -113,18 +102,6 @@ Portfolio/
 - Tablet: 768px - 1024px
 - Mobile: < 768px
 
-## Color Palette
-
-- **Primary Dark**: `#0a0a0a`
-- **Primary Light**: `#f8f8f8`
-- **Accent**: `#2a2a2a`
-- **Border**: `#e0e0e0`
-
-## Typography
-
-- **Display Font**: Playfair Display (headings)
-- **Body Font**: Inter (content)
-
 ## Development
 
 To run locally:
@@ -133,17 +110,24 @@ To run locally:
 # Start a local server
 python3 -m http.server 8000
 
-# Open browser
-# Navigate to http://localhost:8000
+# Or use any static server
+npx serve
 ```
 
 ## Performance
 
+- Optimized images
+- Lazy-loaded videos
+- Efficient GSAP animations
 - Minimal dependencies
-- Optimized animations
-- Responsive images (SVG)
 - Clean, maintainable code
 
-## License
+## Credits
 
-© 2024 Portfolio. All rights reserved.
+**Design & Development**: Khadija Okbi  
+**Portfolio Type**: Mediamatikerin EFZ  
+**Location**: Switzerland  
+
+---
+
+© 2025 Design & Development by Khadija Okbi
