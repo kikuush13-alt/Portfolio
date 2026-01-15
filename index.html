@@ -1,461 +1,805 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Creative Director</title>
-    
-    <!-- Fonts -->
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Inter:wght@300;400;500;600&display=swap');
-    </style>
-    
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="css/style.css">
-    
-    <!-- GSAP -->
-    <script src="lib/gsap-minimal.js"></script>
-</head>
-<body>
-    <!-- Hero Section -->
-    <section id="hero" class="hero-section">
-        <div class="container">
-            <h1 class="hero-title">
-                <span class="design-text"><em><strong>Design</strong></em> less</span>
-                <span class="think-text">think <em><strong>more</strong></em>.</span>
-            </h1>
-        </div>
-    </section>
+<html lang="de">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <title>Khadija Okbi – Portfolio | Mediamatikerin EFZ</title>
+      <meta name="description" content="Editorial, modernes Portfolio von Khadija Okbi – Kreatives Design & Digitalstrategie."/>
+      <link rel="icon" type="image/png" href="img/logo_white.png" />
+      <!-- Fonts-->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Mulish:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+      <!-- GSAP & ScrollTrigger -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollSmoother.min.js" integrity="sha512-8tLk2RKvrL2flcPqz0zQJcQgBCiNWaH/qfLU0Eb+iQFMgv6U2nQkIJF3fKOdPfqrHR4FUF7yzqxNNhvN9vkPvw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <script src="https://unpkg.com/split-type"></script>
+      <!-- Styles -->
+      <link rel="stylesheet" href="style/style.css" />
 
-    <!-- Wave Transition -->
-    <div class="wave-transition wave-1">
-        <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
-            <path d="M0,50 C300,100 500,0 800,50 C1000,80 1100,20 1200,50 L1200,120 L0,120 Z" fill="var(--color-light)"></path>
-        </svg>
-    </div>
+      <!-- Inline CSS for timeline dropdown hover (removed - moved to style/style.css) -->
+   </head>
+   <body>
+      <!-- Header / Navbar -->
+      <header class="site-header" id="top" aria-label="Seitennavigation">
+         <div class="container nav-bar">
+            <a href="index.html" class="logo">
+            <img src="img/logo_white.png" alt="Khadija Okbi Logo" width="45">
+            <img src="img/logo_black.png" alt="Khadija Okbi Logo" width="45" class="logo-onscroll">
+            </a>
+            <nav class="nav" aria-label="Hauptnavigation">
+               <a href="#hero" class="nav-link">Home</a>
+               <a href="#projects" class="nav-link">What I do</a>
+               <a href="#about" class="nav-link">About me</a>
+               <a href="#blog" class="nav-link">Blog</a>
+            </nav>
+         </div>
+      </header>
+      <main>
+      <!-- Hero Section -->
+      <div class="hero-section" id="hero">
 
-    <!-- MBTI Section -->
-    <section id="mbti" class="mbti-section">
-        <div class="container">
-            <h2>Personality Insights</h2>
-            <div class="mbti-content">
-                <div class="circular-charts">
-                    <div class="chart-item">
-                        <div class="circular-chart">
-                            <svg viewBox="0 0 200 200">
-                                <circle class="chart-bg" cx="100" cy="100" r="80"/>
-                                <circle class="chart-progress" cx="100" cy="100" r="80" data-percent="75"/>
-                            </svg>
-                            <div class="chart-percentage">75%</div>
-                        </div>
-                        <p class="chart-label">Extraverted</p>
-                    </div>
-                    <div class="chart-item">
-                        <div class="circular-chart">
-                            <svg viewBox="0 0 200 200">
-                                <circle class="chart-bg" cx="100" cy="100" r="80"/>
-                                <circle class="chart-progress" cx="100" cy="100" r="80" data-percent="60"/>
-                            </svg>
-                            <div class="chart-percentage">60%</div>
-                        </div>
-                        <p class="chart-label">Intuitive</p>
-                    </div>
-                    <div class="chart-item">
-                        <div class="circular-chart">
-                            <svg viewBox="0 0 200 200">
-                                <circle class="chart-bg" cx="100" cy="100" r="80"/>
-                                <circle class="chart-progress" cx="100" cy="100" r="80" data-percent="85"/>
-                            </svg>
-                            <div class="chart-percentage">85%</div>
-                        </div>
-                        <p class="chart-label">Thinking</p>
-                    </div>
-                    <div class="chart-item">
-                        <div class="circular-chart">
-                            <svg viewBox="0 0 200 200">
-                                <circle class="chart-bg" cx="100" cy="100" r="80"/>
-                                <circle class="chart-progress" cx="100" cy="100" r="80" data-percent="70"/>
-                            </svg>
-                            <div class="chart-percentage">70%</div>
-                        </div>
-                        <p class="chart-label">Judging</p>
-                    </div>
-                </div>
-                <div class="progress-bars">
-                    <div class="progress-item">
-                        <div class="progress-bar" data-percent="80">
-                            <div class="progress-fill">
-                                <span class="progress-text">Leadership 80%</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="progress-item">
-                        <div class="progress-bar" data-percent="90">
-                            <div class="progress-fill">
-                                <span class="progress-text">Creativity 90%</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="progress-item">
-                        <div class="progress-bar" data-percent="75">
-                            <div class="progress-fill">
-                                <span class="progress-text">Strategy 75%</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="progress-item">
-                        <div class="progress-bar" data-percent="95">
-                            <div class="progress-fill">
-                                <span class="progress-text">Vision 95%</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+         <!-- Video Background -->
+         <video class="hero-video" autoplay muted loop playsinline>
+           <source src="video/petrichor_hero.mp4" type="video/mp4">
+         </video>
+       
+         <!-- Overlay (optional für Kontrast) -->
+         <div class="hero-overlay"></div>
+       
+         <!-- Content -->
+         <div class="hero-content-wrapper hero-header">
+           <h1 class="hero-claim">
+             <span class="word word-1">think</span><br>
+             <span class="word word-2">more</span><br>
+             <span class="word word-3">design</span><br>
+             <span class="word word-4">less</span>
+           </h1>
+         </div>
+       
+       </div>
+       
+       <!-- Wave Transition -->
+       <div class="wave-transition wave-1">
+           <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+               <path d="M0,50 C300,100 500,0 800,50 C1000,80 1100,20 1200,50 L1200,120 L0,120 Z" fill="#ebebeb"></path>
+           </svg>
+       </div>
+       
+      <!-- Work Section -->
+      <section class="section-skills" id="expertise">
+         <div class="container">
+           <div class="skills-header">
+            <h2>What I do</h2>
+           </div>
+           <div class="skills-wrapper">
+             <div class="skill-item" data-category="visual">
+               <div class="skill-trigger">
+                 <div class="skill-left">
+                   <span class="skill-number">01</span>
+                   <h3 class="skill-h3">Visual Art</h3>
+                 </div>
+                 <div class="skill-cta"></div>
+               </div>
+               <div class="skill-content">
+                 <div class="content-inner">
+                   <p>Gestaltung von Inhalten für Präsentationen, Flyer und Prospekte. Fokus auf Ästhetik und typografische Präzision.</p>
+                   <div class="tool-logos">
+                     <img src="https://cdn.simpleicons.org/adobephotoshop/black" alt="PS">
+                     <img src="https://cdn.simpleicons.org/adobeillustrator/black" alt="AI">
+                     <img src="https://cdn.simpleicons.org/adobeindesign/black" alt="ID">
+                     <img src="https://cdn.simpleicons.org/canva/black" alt="Canva">
+                   </div>
+                 </div>
+               </div>
+             </div>
+       
+             <div class="skill-item" data-category="motion">
+               <div class="skill-trigger">
+                 <div class="skill-left">
+                   <span class="skill-number">02</span>
+                   <h3 class="skill-h3">Video</h3>
+                 </div>
+                 <div class="skill-cta"></div>
+               </div>
+               <div class="skill-content">
+                 <div class="content-inner">
+                   <p>Erstellung von Bildmaterial, Videos und Tondokumenten. High-End Schnitt und Color Grading.</p>
+                   <div class="tool-logos">
+                     <img src="https://cdn.simpleicons.org/adobepremierepro/black" alt="PR">
+                     <img src="https://cdn.simpleicons.org/davinciresolve/black" alt="DV">
+                     <img src="https://cdn.simpleicons.org/adobeaftereffects/black" alt="AE">
+                     <img src="https://cdn.simpleicons.org/capcut/black" alt="CC">
+                   </div>
+                 </div>
+               </div>
+             </div>
+       
+             <div class="skill-item" data-category="marketing">
+               <div class="skill-trigger">
+                 <div class="skill-left">
+                   <span class="skill-number">03</span>
+                   <h3 class="skill-h3">Marketing</h3>
+                 </div>
+                 <div class="skill-cta"></div>
+               </div>
+               <div class="skill-content">
+                 <div class="content-inner">
+                   <p>Aufbereitung von Informationen für soziale Medien und strategische Kommunikation.</p>
+                   <div class="tool-logos">
+                     <img src="https://cdn.simpleicons.org/meta/black" alt="Meta">
+                     <img src="https://cdn.simpleicons.org/tiktok/black" alt="TikTok">
+                     <img src="https://cdn.simpleicons.org/googleads/black" alt="Google">
+                   </div>
+                 </div>
+               </div>
+             </div>
+       
+             <div class="skill-item" data-category="web">
+               <div class="skill-trigger">
+                 <div class="skill-left">
+                   <span class="skill-number">04</span>
+                   <h3 class="skill-h3">Web Dev</h3>
+                 </div>
+                 <div class="skill-cta"></div>
+               </div>
+               <div class="skill-content">
+                 <div class="content-inner">
+                   <p>Programmierung mit HTML, CSS, JavaScript und PHP. WordPress und Datenbanken.</p>
+                   <div class="tool-logos">
+                     <img src="https://cdn.simpleicons.org/html5/black" alt="HTML5">
+                     <img src="https://cdn.simpleicons.org/css3/black" alt="CSS3">
+                     <img src="https://cdn.simpleicons.org/javascript/black" alt="JS">
+                     <img src="https://cdn.simpleicons.org/wordpress/black" alt="WP">
+                   </div>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
+</section>
+
+<!-- Wave Transition -->
+<div class="wave-transition wave-2">
+    <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M0,30 C200,80 400,10 600,40 C800,70 1000,10 1200,40 L1200,120 L0,120 Z" fill="#ffffff"></path>
+    </svg>
+</div>
+
+<div class="section-projects" id="projects" aria-label="Projekte & Arbeiten">
+   <div class="container">
+      <h3>Ausgewählte Projekte</h3>
+      <div class="filter-bar" role="toolbar" aria-label="Projektfilter">
+      <button class="filter-btn" data-filter="all">Alle</button>
+      <button class="filter-btn" data-filter="visual">Visual Art</button>
+      <button class="filter-btn" data-filter="motion">Motion</button>
+      <button class="filter-btn" data-filter="marketing">Marketing</button>
+      <button class="filter-btn" data-filter="web">Web Dev</button>
+      </div>
+      <!-- Grid -->
+      <div class="projects-grid" id="projectsGrid">
+      <!-- 1 -->
+      <a href="unterseiten/petrichor.html" class="project-card tone-dark" data-category="visual">
+      <div class="project-media" style="background-image:url('img/gallery/1_petrichor_dark.jpg')"></div>
+      <div class="project-overlay"></div>
+      <div class="project-info">
+      <button class="project-btn">MEHR DETAILS</button>
+      </div>
+      </a>
+      <!-- 2 -->
+      <a href="unterseiten/trailerpark.html" class="project-card tone-light" data-category="visual">
+      <div class="project-media" style="background-image:url('img/gallery/2_trailerpark_light.jpg')"></div>
+      <div class="project-overlay"></div>
+      <div class="project-info">
+      <button class="project-btn">MEHR DETAILS</button>
+      </div>
+      </a>
+      <!-- 3 -->
+      <a href="unterseiten/gamedays.html" class="project-card tone-dark" data-category="visual">
+      <div class="project-media" style="background-image:url('img/gallery/3_gamedays_dark.jpg')"></div>
+      <div class="project-overlay"></div>
+      <div class="project-info">
+      <button class="project-btn">MEHR DETAILS</button>
+      </div>
+      </a>
+      <!-- 4 -->
+      <a href="unterseiten/ballet.html" class="project-card tone-light" data-category="visual">
+      <div class="project-media" style="background-image:url('img/gallery/4_ballet_light.jpg')"></div>
+      <div class="project-overlay"></div>
+      <div class="project-info">
+      <button class="project-btn">MEHR DETAILS</button>
+      </div>
+      </a>
+      <!-- 5 -->
+      <a href="unterseiten/pfadi.html" class="project-card tone-dark" data-category="marketing">
+      <div class="project-media" style="background-image:url('img/gallery/5_nextgame_dark.jpg')"></div>
+      <div class="project-overlay"></div>
+      <div class="project-info">
+      <button class="project-btn">MEHR DETAILS</button>
+      </div>
+      </a>
+      <!-- 6 -->
+      <a href="unterseiten/tiktok.html" class="project-card tone-light" data-category="marketing">
+      <div class="project-media" style="background-image:url('img/gallery/6_socialmediakonzept_light.jpg')"></div>
+      <div class="project-overlay"></div>
+      <div class="project-info">
+      <button class="project-btn">MEHR DETAILS</button>
+      </div>
+      </a>
+      <!-- 7 -->
+      <a href="unterseiten/beauty.html" class="project-card tone-dark" data-category="visual">
+      <div class="project-media" style="background-image:url('img/gallery/7_beauty_dark.jpg')"></div>
+      <div class="project-overlay"></div>
+      <div class="project-info">
+      <button class="project-btn">MEHR DETAILS</button>
+      </div>
+      </a>
+      <!-- 8 -->
+      <a href="unterseiten/eiskunstlauf.html" class="project-card tone-light" data-category="web">
+      <div class="project-media" style="background-image:url('img/gallery/8_ecw_light.jpg')"></div>
+      <div class="project-overlay"></div>
+      <div class="project-info">
+      <button class="project-btn">MEHR DETAILS</button>
+      </div>
+      </a>
+      <!-- 9 -->
+      <a href="unterseiten/website-prototype.html" class="project-card tone-dark" data-category="web">
+      <div class="project-media" style="background-image:url('img/gallery/9_website_dark.jpg')"></div>
+      <div class="project-overlay"></div>
+      <div class="project-info">
+      <button class="project-btn">MEHR DETAILS</button>
+      </div>
+      </a>
+      <!-- 10 -->
+      <a href="unterseiten/vinyl.html" class="project-card tone-light" data-category="visual">
+      <div class="project-media" style="background-image:url('img/gallery/10_vinyl_light.jpg')"></div>
+      <div class="project-overlay"></div>
+      <div class="project-info">
+      <button class="project-btn">MEHR DETAILS</button>
+      </div>
+      </a>
+      <!-- 11 -->
+      <a href="unterseiten/komthur.html" class="project-card tone-dark" data-category="web">
+      <div class="project-media" style="background-image:url('img/gallery/11_komthur_dark.jpg')"></div>
+      <div class="project-overlay"></div>
+      <div class="project-info">
+      <button class="project-btn">MEHR DETAILS</button>
+      </div>
+      </a>
+      <!-- 12 -->
+      <a href="unterseiten/muted.html" class="project-card tone-light" data-category="visual">
+      <div class="project-media" style="background-image:url('img/gallery/12_muted_light.jpg')"></div>
+      <div class="project-overlay"></div>
+      <div class="project-info">
+      <button class="project-btn">MEHR DETAILS</button>
+      </div>
+      </a>
+      <!-- 13 -->
+      <a href="unterseiten/animation-promo.html" class="project-card tone-dark" data-category="motion">
+      <div class="project-media" style="background-image:url('img/gallery/13_ani_dark.jpg')"></div>
+      <div class="project-overlay"></div>
+      <div class="project-info">
+      <button class="project-btn">MEHR DETAILS</button>
+      </div>
+      </a>
+      <!-- 14 -->
+      <a href="unterseiten/typebook.html" class="project-card tone-light" data-category="visual">
+      <div class="project-media" style="background-image:url('img/gallery/14_typobook_light.jpg')"></div>
+      <div class="project-overlay"></div>
+      <div class="project-info">
+      <button class="project-btn">MEHR DETAILS</button>
+      </div>
+      </a>
+      <!-- 15 -->
+      <a href="unterseiten/sgmodel.html" class="project-card tone-dark" data-category="visual">
+      <div class="project-media" style="background-image:url('img/gallery/15_sgmodel_dark.jpg')"></div>
+      <div class="project-overlay"></div>
+      <div class="project-info">
+      <button class="project-btn">MEHR DETAILS</button>
+      </div>
+      </a>
+      <!-- 16 -->
+      <a href="unterseiten/self-collage.html" class="project-card tone-light" data-category="visual">
+      <div class="project-media" style="background-image:url('img/gallery/16_collage_light.jpg')"></div>
+      <div class="project-overlay"></div>
+      <div class="project-info">
+      <button class="project-btn">MEHR DETAILS</button>
+      </div>
+      </a>
+      <!-- 17 -->
+      <a href="unterseiten/wehelp.html" class="project-card tone-dark" data-category="marketing">
+      <div class="project-media" style="background-image:url('img/gallery/17_wehelp_dark.jpg')"></div>
+      <div class="project-overlay"></div>
+      <div class="project-info">
+      <button class="project-btn">MEHR DETAILS</button>
+      </div>
+      </a>
+      <!-- 18 -->
+      <a href="unterseiten/bewerbung.html" class="project-card tone-light" data-category="visual">
+      <div class="project-media" style="background-image:url('img/gallery/18_bewerbung_light.jpg')"></div>
+      <div class="project-overlay"></div>
+      <div class="project-info">
+      <button class="project-btn">MEHR DETAILS</button>
+      </div>
+      </a>
+      <!-- 19 -->
+      <a href="unterseiten/youth-festival.html" class="project-card tone-dark" data-category="motion">
+      <div class="project-media" style="background-image:url('img/gallery/19_yftrailer_dark.jpg')"></div>
+      <div class="project-overlay"></div>
+      <div class="project-info">
+      <button class="project-btn">MEHR DETAILS</button>
+      </div>
+      </a>
+      <!-- 20 -->
+      <a href="unterseiten/jumpin.html" class="project-card tone-light" data-category="marketing">
+      <div class="project-media" style="background-image:url('img/gallery/20_jumpin_light.jpg')"></div>
+      <div class="project-overlay"></div>
+      <div class="project-info">
+      <button class="project-btn">MEHR DETAILS</button>
+      </div>
+      </a>
+      <!-- 21 -->
+      <a href="unterseiten/presentation.html" class="project-card tone-dark" data-category="motion">
+      <div class="project-media" style="background-image:url('img/gallery/21_presentation_dark.jpg')"></div>
+      <div class="project-overlay"></div>
+      <div class="project-info">
+      <button class="project-btn">MEHR DETAILS</button>
+      </div>
+      </a>
+      <!-- 22 -->
+      <a href="unterseiten/instagram.html" class="project-card tone-light" data-category="marketing">
+      <div class="project-media" style="background-image:url('img/gallery/22_insta_light.jpg')"></div>
+      <div class="project-overlay"></div>
+      <div class="project-info">
+      <button class="project-btn">MEHR DETAILS</button>
+      </div>
+      </a>
+      <!-- 23 -->
+      <a href="unterseiten/immobilien.html" class="project-card tone-dark" data-category="marketing">
+      <div class="project-media" style="background-image:url('img/gallery/23_immo_dark.jpg')"></div>
+      <div class="project-overlay"></div>
+      <div class="project-info">
+      <button class="project-btn">MEHR DETAILS</button>
+      </div>
+      </a>
+      <!-- 24 -->
+      <a href="unterseiten/corona.html" class="project-card tone-light" data-category="visual">
+      <div class="project-media" style="background-image:url('img/gallery/24_corona_light.jpg')"></div>
+      <div class="project-overlay"></div>
+      <div class="project-info">
+      <button class="project-btn">MEHR DETAILS</button>
+      </div>
+      </a>
+      </div>
+      </div>
+      </section>
+
+   <!-- Wave Transition -->
+   <div class="wave-transition wave-3">
+       <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+           <path d="M0,60 C250,20 450,90 700,40 C900,10 1050,70 1200,30 L1200,120 L0,120 Z" fill="#ebebeb"></path>
+       </svg>
+   </div>
+
+   <!-- ABOUT SECTION - BEREINIGT & FUNKTIONAL -->
+<section class="section-about" id="about" aria-label="Über mich">
+   <div class="container">
+      <h2>About me</h2>
+   
+   <div class="resume">
+      <!-- LEFT SIDE: BILDUNG & PROFIL -->
+      <div class="base">
+         <div class="about">
+            <div class="about-image-wrapper">
+               <img src="img/pb.png" alt="Khadija Okbi Portrait" />
             </div>
-        </div>
-    </section>
 
-    <!-- Wave Transition -->
-    <div class="wave-transition wave-2">
-        <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
-            <path d="M0,30 C200,80 400,10 600,40 C800,70 1000,10 1200,40 L1200,120 L0,120 Z" fill="#ffffff"></path>
-        </svg>
-    </div>
+            <h3>Bildung</h3>
 
-    <!-- Skills Section -->
-    <section id="skills" class="skills-section">
-        <div class="container">
-            <h2>Expertise</h2>
-            <div class="skills-grid">
-                <div class="skill-item" data-category="design">
-                    <div class="skill-bar" data-percent="95">
-                        <div class="skill-fill">
-                            <span class="skill-name">UI/UX Design</span>
-                            <span class="skill-percent">95%</span>
+            <!-- TIMELINE -->
+            <div class="timeline-container">
+               <div class="timeline-wrapper">
+                  <div class="timeline-line"></div>
+
+                  <div class="timeline-events">
+                     <!-- Event 1: Technische Berufsmaturität -->
+                     <div class="timeline-event">
+                        <div class="event-marker"></div>
+                        <div class="event-content left">
+                           <div class="event-card">
+                              <div class="event-date">2025</div>
+                              <h4 class="event-title">Technische Berufsmaturität</h4>
+                              <button class="event-toggle" aria-expanded="false">Mehr</button>
+                              <div class="event-description">
+                                 <p>
+                                 Mit der Abgabe meiner interdisziplinären Arbeit zum Thema „Die Illusion der freien Meinung" schloss ich meine Ausbildung ab. Die Arbeit analysiert neurowissenschaftliche Faktoren wie hormonelle Steuerung und soziologische Einflüsse sowie die Auswirkungen von Social Media und KI auf demokratische Prozesse.
+                              </p>
+                              <div class="event-meta">Oktober 2025</div>
+                              </div>
+                           </div>
                         </div>
-                    </div>
-                    <div class="skill-details">
-                        <p>Expert in creating intuitive and beautiful user interfaces with focus on user experience and modern design principles.</p>
-                    </div>
-                </div>
-                <div class="skill-item" data-category="frontend">
-                    <div class="skill-bar" data-percent="90">
-                        <div class="skill-fill">
-                            <span class="skill-name">Frontend Development</span>
-                            <span class="skill-percent">90%</span>
+                     </div>
+
+                     <!-- Event 2: Mediamatikerin EFZ -->
+                     <div class="timeline-event">
+                        <div class="event-marker"></div>
+                        <div class="event-content right">
+                           <div class="event-card">
+                              <div class="event-date">2023</div>
+                              <h4 class="event-title">Mediamatikerin EFZ</h4>
+                              <button class="event-toggle" aria-expanded="false">Mehr</button>
+                              <div class="event-description">
+                                 <p>
+                                 Als Abschluss meiner vierjährigen Ausbildung entwickelte ich für die Werbeagentur <a href="https://komthur.ch" text-decoration: underline;">Komthur</a> ein umfassendes Online-Marketing-Konzept mit strategischer Marktanalyse, UI/UX-Website-Redesign, SEO/SEA-Optimierung und halbjährlichem Social-Media-Plan.
+                              </p>
+                              <div class="event-meta">Juli 2023</div>
+                              </div>
+                           </div>
                         </div>
-                    </div>
-                    <div class="skill-details">
-                        <p>Proficient in HTML, CSS, JavaScript, and modern frameworks. Creating responsive and performant web applications.</p>
-                    </div>
-                </div>
-                <div class="skill-item" data-category="design">
-                    <div class="skill-bar" data-percent="88">
-                        <div class="skill-fill">
-                            <span class="skill-name">Brand Identity</span>
-                            <span class="skill-percent">88%</span>
+                     </div>
+
+                     <!-- Event 3: Social Media Management -->
+                     <div class="timeline-event">
+                        <div class="event-marker"></div>
+                        <div class="event-content left">
+                           <div class="event-card">
+                              <div class="event-date">2022</div>
+                              <h4 class="event-title">Social Media Management</h4>
+                              <button class="event-toggle" aria-expanded="false">Mehr</button>
+                              <div class="event-description">
+                                 <p>
+                                 Im zweiten Lehrjahr bei SBW Neue Medien umfasste mein Aufgabenbereich die Konzeption und Umsetzung zielgruppengerechter Inhalte für Instagram und TikTok. Vertiefung in Design und Animation.
+                              </p>
+                              <div class="event-meta">SBW Neue Medien, Romanshorn</div>
+                              </div>
+                           </div>
                         </div>
-                    </div>
-                    <div class="skill-details">
-                        <p>Crafting cohesive brand identities that tell compelling stories and resonate with target audiences.</p>
-                    </div>
-                </div>
-                <div class="skill-item" data-category="animation">
-                    <div class="skill-bar" data-percent="85">
-                        <div class="skill-fill">
-                            <span class="skill-name">Motion Design</span>
-                            <span class="skill-percent">85%</span>
+                     </div>
+
+                     <!-- Event 4: Sportmarketing -->
+                     <div class="timeline-event">
+                        <div class="event-marker"></div>
+                        <div class="event-content right">
+                           <div class="event-card">
+                              <div class="event-date">2021</div>
+                              <h4 class="event-title">Sportmarketing</h4>
+                              <button class="event-toggle" aria-expanded="false">Mehr</button>
+                              <div class="event-description">
+                                 <p>
+                                 Praktikumsjahr im Bereich Sportmarketing. Erstellen von Festführern, Sponsoring-Materialien und Bandenanimationen für große Sportevents wie die Schweizermeisterschaft im Kunstturnen.
+                              </p>
+                              <div class="event-meta">Win-4 Winterthur</div>
+                              </div>
+                           </div>
                         </div>
-                    </div>
-                    <div class="skill-details">
-                        <p>Creating smooth animations and micro-interactions that enhance user experience and bring interfaces to life.</p>
-                    </div>
-                </div>
-                <div class="skill-item" data-category="strategy">
-                    <div class="skill-bar" data-percent="92">
-                        <div class="skill-fill">
-                            <span class="skill-name">Creative Strategy</span>
-                            <span class="skill-percent">92%</span>
+                     </div>
+
+                     <!-- Event 5: Ausbildung Start -->
+                     <div class="timeline-event">
+                        <div class="event-marker"></div>
+                        <div class="event-content left">
+                           <div class="event-card">
+                              <div class="event-date">2019</div>
+                              <h4 class="event-title">Ausbildung zur Mediamatikerin</h4>
+                              <button class="event-toggle" aria-expanded="false">Mehr</button>
+                              <div class="event-description">
+                                 <p>
+                                 Beginn der zwei-jährigen schulischen Ausbildung.
+                              </p>
+                              <div class="event-meta">SBW Neue Medien</div>
+                              </div>
+                           </div>
                         </div>
-                    </div>
-                    <div class="skill-details">
-                        <p>Developing comprehensive creative strategies that align business goals with user needs and market trends.</p>
-                    </div>
-                </div>
-                <div class="skill-item" data-category="frontend">
-                    <div class="skill-bar" data-percent="87">
-                        <div class="skill-fill">
-                            <span class="skill-name">Responsive Design</span>
-                            <span class="skill-percent">87%</span>
+                     </div>
+
+                     <!-- Event 6: Praktikum Hillsong -->
+                     <div class="timeline-event">
+                        <div class="event-marker"></div>
+                        <div class="event-content right">
+                           <div class="event-card">
+                              <div class="event-date">2018</div>
+                              <h4 class="event-title">Praktikum Social Media</h4>
+                              <button class="event-toggle" aria-expanded="false">Mehr</button>
+                              <div class="event-description">
+                                 <p>
+                                 Bei Hillsong Germany übernahm ich die Mediaverantwortung für den Young & Free-Bereich. Social-Media-Management mit Fokus auf Instagram: Event-Trailer, Screen-Designs, Flyer und Video-/Fotoproduktion.
+                              </p>
+                              <div class="event-meta">Hillsong, Konstanz</div>
+                              </div>
+                           </div>
                         </div>
-                    </div>
-                    <div class="skill-details">
-                        <p>Building adaptive layouts that work seamlessly across all devices and screen sizes.</p>
-                    </div>
-                </div>
+                     </div>
+                  </div>
+               </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Wave Transition -->
-    <div class="wave-transition wave-3">
-        <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
-            <path d="M0,60 C250,20 450,90 700,40 C900,10 1050,70 1200,30 L1200,120 L0,120 Z" fill="var(--color-light)"></path>
-        </svg>
-    </div>
-
-    <!-- Projects Section -->
-    <section id="projects" class="projects-section">
-        <div class="container">
-            <h2>Selected Work</h2>
-            <div class="filter-nav">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="design">Design</button>
-                <button class="filter-btn" data-filter="frontend">Frontend</button>
-                <button class="filter-btn" data-filter="animation">Animation</button>
-                <button class="filter-btn" data-filter="strategy">Strategy</button>
+            <!-- FAVORITES -->
+            <div class="favorites">
+               <h3>Meine Favoriten</h3>
+               <div class="editorial-grid">
+                  <div class="grid-item">
+                     <img src="img/fourthwing.jpg" alt="Fourth Wing Buch">
+                     <div class="fav-title">Buch</div>
+                     <div class="fav-detail">Fourth Wing</div>
+                  </div>
+                  <div class="grid-item">
+                     <img src="img/mauve.jpg" alt="Altrosa Farbe">
+                     <div class="fav-title">Farbe</div>
+                     <div class="fav-detail">Altrosa</div>
+                  </div>
+                  <div class="grid-item">
+                     <img src="img/mordaufex.jpg" alt="Mord auf Ex Podcast">
+                     <div class="fav-title">Podcast</div>
+                     <div class="fav-detail">Mord auf Ex</div>
+                  </div>
+                  <div class="grid-item">
+                     <img src="img/emilyinparis.jpg" alt="Emily in Paris">
+                     <div class="fav-title">Serie</div>
+                     <div class="fav-detail">Emily in Paris</div>
+                  </div>
+               </div>
             </div>
-            <div class="projects-grid">
-                <div class="project-item" data-category="design">
-                    <div class="project-image">
-                        <img src="images/project1.svg" alt="Project 1">
-                    </div>
-                    <div class="project-info">
-                        <h3>Luxury Brand Redesign</h3>
-                        <p>Complete brand overhaul for premium fashion house</p>
-                    </div>
-                </div>
-                <div class="project-item" data-category="frontend">
-                    <div class="project-image">
-                        <img src="images/project2.svg" alt="Project 2">
-                    </div>
-                    <div class="project-info">
-                        <h3>E-commerce Platform</h3>
-                        <p>Modern shopping experience with seamless UX</p>
-                    </div>
-                </div>
-                <div class="project-item" data-category="design">
-                    <div class="project-image">
-                        <img src="images/project3.svg" alt="Project 3">
-                    </div>
-                    <div class="project-info">
-                        <h3>Minimalist Portfolio</h3>
-                        <p>Clean and elegant showcase for photographer</p>
-                    </div>
-                </div>
-                <div class="project-item" data-category="animation">
-                    <div class="project-image">
-                        <img src="images/project4.svg" alt="Project 4">
-                    </div>
-                    <div class="project-info">
-                        <h3>Interactive Dashboard</h3>
-                        <p>Data visualization with smooth animations</p>
-                    </div>
-                </div>
-                <div class="project-item" data-category="strategy">
-                    <div class="project-image">
-                        <img src="images/project5.svg" alt="Project 5">
-                    </div>
-                    <div class="project-info">
-                        <h3>Digital Strategy</h3>
-                        <p>Complete digital transformation roadmap</p>
-                    </div>
-                </div>
-                <div class="project-item" data-category="frontend">
-                    <div class="project-image">
-                        <img src="images/project6.svg" alt="Project 6">
-                    </div>
-                    <div class="project-info">
-                        <h3>SaaS Application</h3>
-                        <p>Enterprise software with elegant interface</p>
-                    </div>
-                </div>
-                <div class="project-item" data-category="design">
-                    <div class="project-image">
-                        <img src="images/project7.svg" alt="Project 7">
-                    </div>
-                    <div class="project-info">
-                        <h3>Mobile App Design</h3>
-                        <p>Intuitive interface for lifestyle app</p>
-                    </div>
-                </div>
-                <div class="project-item" data-category="animation">
-                    <div class="project-image">
-                        <img src="images/project8.svg" alt="Project 8">
-                    </div>
-                    <div class="project-info">
-                        <h3>Landing Page</h3>
-                        <p>High-converting page with engaging animations</p>
-                    </div>
-                </div>
+
+            <!-- SPOTIFY -->
+            <div class="spotify-wrapped">
+               <h3>Mein Spotify wrapped</h3>
+               <div id="wrap">
+                  <div class="record-container">
+                     <div class="album">
+                        <img src="img/runaway.jpeg" alt="Album">
+                     </div>
+                     <div class="record">
+                        <img src="http://upload.wikimedia.org/wikipedia/commons/a/ae/Record2.png" alt="Vinyl">
+                     </div>
+                  </div>
+                  <div class="record-container">
+                     <div class="album">
+                        <img src="img/fear.jpeg" alt="Album">
+                     </div>
+                     <div class="record">
+                        <img src="http://upload.wikimedia.org/wikipedia/commons/a/ae/Record2.png" alt="Vinyl">
+                     </div>
+                  </div>
+                  <div class="record-container">
+                     <div class="album">
+                        <img src="img/millionyears.jpeg" alt="Album">
+                     </div>
+                     <div class="record">
+                        <img src="http://upload.wikimedia.org/wikipedia/commons/a/ae/Record2.png" alt="Vinyl">
+                     </div>
+                  </div>
+               </div>
             </div>
-        </div>
-    </section>
+         </div>
+      </div>
+      <!-- RIGHT SIDE: TECHNICAL SKILLS -->
+      <div class="func">
 
-    <!-- Wave Transition -->
-    <div class="wave-transition wave-4">
-        <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
-            <path d="M0,40 C300,90 500,20 750,60 C950,90 1100,30 1200,50 L1200,120 L0,120 Z" fill="#f0f0f0"></path>
-        </svg>
-    </div>
+            <!-- SOFT SKILLS - MBTI INTERACTIVE (ELEGANTE VERSION) -->
+            <div class="skills-soft mbti-widget" aria-label="MBTI Persönlichkeit">
+               <div class="mbti-header">
+                  <h3 class="mbti-heading">Persönlichkeit</h3>
+                  <div class="mbti-type-badge">INTP‑A</div>
+               </div>
 
-    <!-- About Section -->
-    <section id="about" class="about-section">
-        <div class="container">
-            <h2>About Me</h2>
-            <div class="about-content">
-                <div class="about-left">
-                    <div class="profile-image">
-                        <img src="images/profile.svg" alt="Profile">
-                    </div>
-                    <div class="profile-info">
-                        <div class="info-item">
-                            <span class="info-label">Name</span>
-                            <span class="info-value">Alex Morgan</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-label">Role</span>
-                            <span class="info-value">Creative Director</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-label">Experience</span>
-                            <span class="info-value">15+ Years</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-label">Location</span>
-                            <span class="info-value">New York, USA</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-label">Email</span>
-                            <span class="info-value">hello@alexmorgan.com</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="about-right">
-                    <p class="about-text">
-                        <span class="initial-letter">A</span>s a creative director with over 15 years of experience, I specialize in crafting exceptional digital experiences that blend aesthetic excellence with strategic thinking. My approach combines deep understanding of user psychology with cutting-edge design principles to create solutions that not only look beautiful but drive meaningful results.
-                    </p>
-                    <p class="about-text">
-                        Throughout my career, I've had the privilege of working with leading brands across various industries, from luxury fashion to technology startups. Each project presents a unique challenge, and I thrive on transforming complex problems into elegant, user-centered solutions.
-                    </p>
-                    <p class="about-text">
-                        My philosophy centers on the belief that great design is invisible—it should feel natural, intuitive, and effortless. I'm passionate about mentoring emerging designers and staying at the forefront of design innovation, constantly exploring new technologies and methodologies to push creative boundaries.
-                    </p>
-                </div>
+               <div class="mbti-grid">
+                  <ul class="mbti-list" role="list">
+                     <li class="mbti-item" data-aspect="Introvertiert" data-percent="51" tabindex="0" role="button" aria-pressed="false">
+                        <svg viewBox="0 0 100 100" class="mbti-svg" aria-hidden="true">
+                           <circle cx="50" cy="50" r="45" class="mbti-track"></circle>
+                           <circle cx="50" cy="50" r="45" class="mbti-progress"></circle>
+                        </svg>
+                        <small class="mbti-percent">51%</small>
+                        <span class="mbti-label">Introvertiert</span>
+                     </li>
+
+                     <li class="mbti-item" data-aspect="Intuitiv" data-percent="95" tabindex="0" role="button" aria-pressed="false">
+                        <svg viewBox="0 0 100 100" class="mbti-svg" aria-hidden="true">
+                           <circle cx="50" cy="50" r="45" class="mbti-track"></circle>
+                           <circle cx="50" cy="50" r="45" class="mbti-progress"></circle>
+                        </svg>
+                        <small class="mbti-percent">95%</small>
+                        <span class="mbti-label">Intuitiv</span>
+                     </li>
+
+                     <li class="mbti-item" data-aspect="Analytisch" data-percent="74" tabindex="0" role="button" aria-pressed="false">
+                        <svg viewBox="0 0 100 100" class="mbti-svg" aria-hidden="true">
+                           <circle cx="50" cy="50" r="45" class="mbti-track"></circle>
+                           <circle cx="50" cy="50" r="45" class="mbti-progress"></circle>
+                        </svg>
+                        <small class="mbti-percent">74%</small>
+                        <span class="mbti-label">Analytisch</span>
+                     </li>
+
+                     <li class="mbti-item" data-aspect="Kreativ" data-percent="100" tabindex="0" role="button" aria-pressed="false">
+                        <svg viewBox="0 0 100 100" class="mbti-svg" aria-hidden="true"></svg>
+                           <circle cx="50" cy="50" r="45" class="mbti-track"></circle>
+                           <circle cx="50" cy="50" r="45" class="mbti-progress"></circle>
+                        </svg>
+                        <small class="mbti-percent">100%</small>
+                        <span class="mbti-label">Kreativ</span>
+                     </li>
+                  </ul>
+
+                  <aside class="mbti-info" id="mbti-info" aria-live="polite">
+                     <div class="mbti-info-header">
+                        <h5 class="mbti-title">Der Logiker</h5>
+                        <button class="mbti-close" aria-label="Schliessen">×</button>
+                     </div>
+                     
+                     <p class="mbti-desc">Neugierig. Unabhängig. Analytisch. INTPs analysieren komplexe Systeme und finden kreative Lösungen—Pioniere neuer Ideen.</p>
+
+                     <div class="mbti-detail">
+                        <h6>Wie ich denke</h6>
+                        <p>Konzeptuell und logisch. Ich hinterfrage Annahmen und bevorzuge intellektuelle Freiheit.</p>
+                     </div>
+
+                     <div class="mbti-famous">
+                        <h6>Ähnliche Denker</h6>
+                        <ul>
+                           <li>Albert Einstein</li>
+                           <li>Nikola Tesla</li>
+                        </ul>
+                     </div>
+
+                     <div class="mbti-aspect">
+                        <p id="mbti-aspect-text" class="mbti-aspect-text">Tippe auf einen Kreis, um mehr zu erfahren</p>
+                     </div>
+                  </aside>
+               </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Wave Transition -->
-    <div class="wave-transition wave-5">
-        <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
-            <path d="M0,45 C280,10 480,80 680,35 C880,5 1080,75 1200,40 L1200,120 L0,120 Z" fill="var(--color-light)"></path>
-        </svg>
-    </div>
+         <div class="skills-prog">
+            <h3>Technical Skills</h3>
+            <ul>
+               <li data-percent="95">
+                  <span>Adobe InDesign</span>
+                  <div class="skills-bar"><div class="bar"></div></div>
+               </li>
+               <li data-percent="98">
+                  <span>Photoshop</span>
+                  <div class="skills-bar"><div class="bar"></div></div>
+               </li>
+               <li data-percent="92">
+                  <span>Premiere Pro</span>
+                  <div class="skills-bar"><div class="bar"></div></div>
+               </li>
+               <li data-percent="90">
+                  <span>After Effects</span>
+                  <div class="skills-bar"><div class="bar"></div></div>
+               </li>
+               <li data-percent="85">
+                  <span>Frontend (HTML, CSS, JS)</span>
+                  <div class="skills-bar"><div class="bar"></div></div>
+               </li>
+               <li data-percent="75">
+                  <span>Backend (NodeJS, PHP)</span>
+                  <div class="skills-bar"><div class="bar"></div></div>
+               </li>
+               <li data-percent="80">
+                  <span>Marketing & Social Media</span>
+                  <div class="skills-bar"><div class="bar"></div></div>
+               </li>
+            </ul>
+         </div>
 
-    <!-- Timeline Section -->
-    <section id="timeline" class="timeline-section">
-        <div class="container">
-            <h2>Journey</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <span class="timeline-year">2023</span>
-                        <h3>Creative Director</h3>
-                        <p>Leading creative strategy and design innovation at premier digital agency</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <span class="timeline-year">2019</span>
-                        <h3>Senior Designer</h3>
-                        <p>Spearheaded major brand redesigns and digital transformations</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <span class="timeline-year">2015</span>
-                        <h3>Design Lead</h3>
-                        <p>Built and managed design team for tech startup, Series B funded</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <span class="timeline-year">2011</span>
-                        <h3>UI/UX Designer</h3>
-                        <p>Created user experiences for Fortune 500 clients</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <span class="timeline-year">2008</span>
-                        <h3>Started Journey</h3>
-                        <p>Began career in design with focus on web and digital media</p>
-                    </div>
-                </div>
+         <div class="skills-prog">
+            <h3>Soft Skills</h3>
+            <ul>
+               <li data-percent="95">
+                  <span>Strategisch</span>
+                  <div class="skills-bar"><div class="bar"></div></div>
+               </li>
+               <li data-percent="90">
+                  <span>Entschlossen</span>
+                  <div class="skills-bar"><div class="bar"></div></div>
+               </li>
+               <li data-percent="92">
+                  <span>Effizient</span>
+                  <div class="skills-bar"><div class="bar"></div></div>
+               </li>
+               <li data-percent="85">
+                  <span>Kreativ & Analytisch</span>
+                  <div class="skills-bar"><div class="bar"></div></div>
+               </li>
+               <li data-percent="88">
+                  <span>Perfektionistisch</span>
+                  <div class="skills-bar"><div class="bar"></div></div>
+               </li>
+               <li data-percent="80">
+                  <span>Selbstreflektiert</span>
+                  <div class="skills-bar"><div class="bar"></div></div>
+               </li>
+            </ul>
+         </div>
+      </div>
+      </div>
+
+   </div>
+</section>
+
+  <!-- Wave Transition -->
+  <div class="wave-transition wave-4">
+      <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path d="M0,40 C300,90 500,20 750,60 C950,90 1100,30 1200,50 L1200,120 L0,120 Z" fill="#000"></path>
+      </svg>
+  </div>
+
+  <!-- Blog Section -->
+  <section class="section-blog" id="blog" aria-label="Blog">
+   <div class="container">
+   <h2 style="color: white;">Blog</h2>
+   <!-- Blog grid -->
+   <div class="blog-grid" id="blogGrid">
+   <article class="blog-card" data-category="design">
+   <div class="blog-thumb" style="background-image:url('img/collage.jpg')" loading="lazy" aria-hidden="true"></div>
+   <div class="blog-content">
+   <h3 class="blog-title">Die Illusion der freien Meinung</h3>
+   <p class="blog-teaser">Demokratie in Zeiten von Social Media & KI</p>
+   <button class="read-more" data-target="post-1">Weiterlesen</button>
+   </div>
+   </article>
+   <article class="blog-card" data-category="process">
+   <div class="blog-thumb" style="background-image:url('img/collage.jpg')" loading="lazy" aria-hidden="true"></div>
+   <div class="blog-content">
+   <h3 class="blog-title">10k Follower in 30 Tagen</h3>
+   <p class="blog-teaser">Meine Faceless Tiktok Strategie</p>
+   <button class="read-more" data-target="post-2">Weiterlesen</button>
+   </div>
+   </article>
+   <article class="blog-card" data-category="marketing">
+   <div class="blog-thumb" style="background-image:url('img/collage.jpg')" loading="lazy" aria-hidden="true"></div>
+   <div class="blog-content">
+   <h3 class="blog-title">Trending on Threads</h3>
+   <p class="blog-teaser">Wie ich auf Threads meine eigene Trading Community aufgebaut habe</p>
+   <button class="read-more" data-target="post-3">Weiterlesen</button>
+   </div>
+   </article>
+   </div>
+   </div>
+   </section>
+      <!-- Contact Section -->
+   </main>
+      <!-- Footer -->
+      <footer class="site-footer" aria-label="Seitenende">
+         <div class="container footer-inner">
+            <div class="footer-copy">© 2025 Design & Development by Khadija Okbi</div>
+            <div class="footer-socials" aria-label="Soziale Netzwerke">
+               <a class="social-link" href="https://github.com/khadijaokbi1" target="_blank" rel="noopener" aria-label="GitHub">
+                 <!-- GitHub Icon -->
+                 <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                   <path fill-rule="evenodd" clip-rule="evenodd" d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.53-1.36-1.3-1.72-1.3-1.72-1.06-.72.08-.71.08-.71 1.17.08 1.79 1.2 1.79 1.2 1.04 1.78 2.73 1.27 3.4.97.11-.76.41-1.27.75-1.56-2.56-.29-5.26-1.28-5.26-5.71 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.04 0 0 .97-.31 3.18 1.18a11.03 11.03 0 0 1 2.9-.39c.98 0 1.97.13 2.9.39 2.2-1.49 3.17-1.18 3.17-1.18.64 1.58.24 2.75.12 3.04.74.81 1.19 1.84 1.19 3.1 0 4.44-2.71 5.42-5.29 5.7.42.36.8 1.07.8 2.16 0 1.56-.01 2.82-.01 3.2 0 .31.21.68.8.56C20.71 21.39 24 17.08 24 12c0-6.27-5.23-11.5-12-11.5z" fill="currentColor"/>
+                 </svg>
+               </a>
+               <a class="social-link" href="https://ch.linkedin.com/in/khadija-okbi-652a211a4" target="_blank" rel="noopener" aria-label="LinkedIn">
+                 <!-- LinkedIn Icon -->
+                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                   <rect x="2" y="2" width="20" height="20" rx="2" stroke="currentColor" stroke-width="1.2" fill="none"/>
+                   <path d="M6.5 9.5v8.5M6.5 7.5v.01M10.5 17.5v-6c0-1.1.9-2 2-2s2 .9 2 2v6M10.5 11.5h4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                 </svg>
+               </a>
+               <a class="social-link" href="https://www.tiktok.com/@mentalwealthy" target="_blank" rel="noopener" aria-label="TikTok">
+                 <!-- TikTok Icon (stylized note) -->
+                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                   <path d="M16 7.5c.5 0 .9.04 1.3.12v3.38a4.2 4.2 0 0 1-2.3-.64v5.64A4.86 4.86 0 0 1 11 20a4.86 4.86 0 0 1-4.86-4.86 4.86 4.86 0 0 1 4.86-4.86c.28 0 .55.03.81.08V7.5h.19c1.14 0 2.09.37 2.99 1.03V7.5z" fill="currentColor"/>
+                 </svg>
+               </a>
+               <a class="social-link" href="https://codepen.io/khadijaokbi1" target="_blank" rel="noopener" aria-label="CodePen">
+                 <!-- CodePen Icon -->
+                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                   <path d="M12 2.5L3.5 7v10L12 21.5l8.5-4.5V7L12 2.5z" stroke="currentColor" stroke-width="1.1" fill="none"/>
+                   <path d="M3.5 7.5l8.5 5 8.5-5" stroke="currentColor" stroke-width="1.1" fill="none"/>
+                   <path d="M12 21.5v-10" stroke="currentColor" stroke-width="1.1" fill="none"/>
+                 </svg>
+               </a>
             </div>
-        </div>
-    </section>
-
-    <!-- Wave Transition -->
-    <div class="wave-transition wave-6">
-        <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
-            <path d="M0,35 C220,85 520,15 720,55 C920,85 1120,25 1200,45 L1200,120 L0,120 Z" fill="var(--color-dark)"></path>
-        </svg>
-    </div>
-
-    <!-- Blog Section -->
-    <section id="blog" class="blog-section">
-        <div class="container">
-            <h2>Insights</h2>
-            <div class="blog-grid">
-                <article class="blog-card">
-                    <div class="blog-image">
-                        <img src="images/blog1.svg" alt="Blog 1">
-                    </div>
-                    <div class="blog-content">
-                        <h3>The Future of Design Systems</h3>
-                        <p>Exploring how design systems evolve and adapt to emerging technologies and user needs.</p>
-                        <span class="blog-date">January 2024</span>
-                    </div>
-                </article>
-                <article class="blog-card">
-                    <div class="blog-image">
-                        <img src="images/blog2.svg" alt="Blog 2">
-                    </div>
-                    <div class="blog-content">
-                        <h3>Minimalism in Digital Design</h3>
-                        <p>Why less is often more when creating memorable user experiences.</p>
-                        <span class="blog-date">December 2023</span>
-                    </div>
-                </article>
-                <article class="blog-card">
-                    <div class="blog-image">
-                        <img src="images/blog3.svg" alt="Blog 3">
-                    </div>
-                    <div class="blog-content">
-                        <h3>Accessibility First Approach</h3>
-                        <p>Making digital experiences inclusive without compromising on aesthetics.</p>
-                        <span class="blog-date">November 2023</span>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2024 Portfolio. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <!-- Scripts -->
-    <script src="js/main.js"></script>
-</body>
+         </div>
+      </footer>
+      <!-- Scripts -->
+      <script src="script.js"></script>
+      <script src="animations.js"></script>
+      <script src="timeline.js"></script>
+   </body>
 </html>
