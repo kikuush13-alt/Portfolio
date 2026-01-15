@@ -315,6 +315,104 @@
     transform: translateY(40px);
   }
   
+  /* Hero CTA Button */
+  .hero-cta-btn {
+    position: absolute;
+    bottom: 12vh;
+    left: 8vw;
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 2.5rem;
+    background: rgba(255, 255, 255, 0.95);
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 1.125rem;
+    font-weight: 600;
+    border-radius: 50px;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s var(--easing-standard);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  .hero-cta-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.25);
+    background: rgba(255, 255, 255, 1);
+  }
+  
+  .cta-arrow {
+    font-size: 1.5rem;
+    transition: transform 0.3s var(--easing-standard);
+  }
+  
+  .hero-cta-btn:hover .cta-arrow {
+    transform: translateX(4px);
+  }
+  
+  /* Hero Circle Element */
+  .hero-circle-element {
+    position: absolute;
+    right: 8vw;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    cursor: pointer;
+  }
+  
+  .circle-outer {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    animation: rotate 20s linear infinite;
+  }
+  
+  @keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  
+  .circle-text-wrapper {
+    position: absolute;
+    inset: 0;
+  }
+  
+  .circle-text {
+    width: 100%;
+    height: 100%;
+    animation: rotate 20s linear infinite;
+  }
+  
+  .circle-rotating-text {
+    font-size: 14px;
+    font-weight: 600;
+    fill: #fff;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+  }
+  
+  .circle-arrow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-primary);
+    transition: all 0.3s var(--easing-standard);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .hero-circle-element:hover .circle-arrow {
+    transform: translate(-50%, -50%) scale(1.1);
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.3);
+  }
+  
   /* =========================================
      6. SECTION TITLES & ANIMATIONS
      ========================================= */
